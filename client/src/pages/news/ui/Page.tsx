@@ -1,3 +1,10 @@
+import { NavBar } from '@/widgets/navBar/ui/NavBar';
+
 export const NewsPage: React.FC = () => {
-	return <div>news</div>;
+	return (
+		<>
+			<div>newsPage</div>;
+			<NavBar />
+		</>
+	);
 };
