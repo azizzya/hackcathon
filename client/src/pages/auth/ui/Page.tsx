@@ -1,3 +1,11 @@
 export const AuthPage: React.FC = () => {
-	return <div>auth</div>;
+	return (
+		<>
+			<form>
+				<input placeholder='mail' />
+				<input placeholder='password' />
+				<button>login</button>
+			</form>
+		</>
+	);
 };

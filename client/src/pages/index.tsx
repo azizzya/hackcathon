@@ -3,6 +3,7 @@ import { AuthPage } from './auth/ui/Page';
 import { MainPage } from './main/ui/Page';
 import { NewsPage } from './news/ui/Page';
 import { ProfilePage } from './profile/ui/Page';
+import { TamagotchiPage } from './tamagotchi/ui/Page';
 import { TasksPage } from './tasks/ui/Page';
 
 export const Routing = () => {
@@ -13,6 +14,7 @@ export const Routing = () => {
 			<Route path='/news' element={<NewsPage />} />
 			<Route path='/profile' element={<ProfilePage />} />
 			<Route path='/tasks' element={<TasksPage />} />
+			<Route path='/tamagotchi' element={<TamagotchiPage />} />
 		</Routes>
 	);
 };
