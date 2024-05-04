@@ -8,7 +8,7 @@ export function useLogInMutation() {
 	return useMutation({
 		mutationFn: (user: IUserLogIn) => authService.logIn(user),
 		mutationKey: ['login'],
-		onSuccess: () => navigate('/main'),
+		onSuccess: () => navigate('/'),
 		onError: () => alert('error'), //делать
 	});
 }
