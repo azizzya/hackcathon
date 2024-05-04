@@ -10,3 +10,11 @@ export interface IUser {
 	tamagotсhi: ITamagotchi; // пока непонятно какие данные с бека летят
 	tasks: ITask[]; //возможно поменяется
 }
+
+export interface IUserLogIn {
+	login: string;
+	password: string;
+}
+
+export interface IResponseLogIn {}
+//дописать возвращаемый тип
