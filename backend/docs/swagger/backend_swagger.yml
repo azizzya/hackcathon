@@ -14,7 +14,9 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/item"
+                type: array
+                items:
+                  $ref: "#/components/schemas/item"
 
 components:
   schemas:
