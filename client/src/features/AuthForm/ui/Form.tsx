@@ -1,18 +1,21 @@
 import { useInput } from '@/shared/helpers/useInput';
 import '@/shared/ui/shared.scss';
-import { useLogInMutation } from '../helpers/useLogIn.mutation';
+import { useNavigate } from 'react-router-dom';
 import './styles.scss';
 
 export const AuthForm: React.FC = () => {
+	const navigate = useNavigate();
+
 	const loginInput = useInput('');
 	const passwordInput = useInput('');
-	const loginMutation = useLogInMutation();
+	// const loginMutation = useLogInMutation(); раскомментить
 	const onSubmitHandler = (e: React.ChangeEvent<HTMLFormElement>) => {
 		e.preventDefault();
-		loginMutation.mutate({
-			login: loginInput.value,
-			password: passwordInput.value,
-		});
+		// loginMutation.mutate({
+		// 	login: loginInput.value,
+		// 	password: passwordInput.value, раскомментить
+		// });
+		navigate('/'); //убрать
 	};
 
 	return (

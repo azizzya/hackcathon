@@ -3,7 +3,8 @@ import { NavBar } from '@/widgets/navBar/ui/NavBar';
 export const MainPage: React.FC = () => {
 	return (
 		<>
-			<div>MainPage</div> ;
+			<p>Tamagotchi</p>
+			<img src='src/shared/assets/tama.png' />
 			<NavBar />
 		</>
 	);

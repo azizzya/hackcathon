@@ -1,9 +1,22 @@
+import { useNavigate } from 'react-router-dom';
+import './styles.scss';
 export const NavBar: React.FC = () => {
+	const navigate = useNavigate();
+
 	return (
-		<div>
-			<button>main</button>
-			<button>tasks</button>
-			<button>profile</button>
+		<div className='navbar-wrapper'>
+			<button className='navbar-button' onClick={() => navigate('/')}>
+				main
+			</button>
+			<button className='navbar-button' onClick={() => navigate('/tasks')}>
+				tasks
+			</button>
+			<button className='navbar-button' onClick={() => navigate('/store')}>
+				store
+			</button>
+			<button className='navbar-button' onClick={() => navigate('/profile')}>
+				profile
+			</button>
 		</div>
 	);
 };
