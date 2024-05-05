@@ -3,7 +3,7 @@ info:
   title: Backend приложения для корпоративной геймификации
   version: 1.0.0
 paths:
-  /store/items:
+  /api/v01/store/items:
     get:
       summary: Получить полный список предметов магазина
       tags: 
