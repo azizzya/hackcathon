@@ -1,5 +1,13 @@
-import { ProductsGrid } from '@/widgets';
+import { StoreSearch } from '@/features/StoreSearch';
+import { NavBar } from '@/widgets/navBar';
+import { ProductsList } from '@/widgets/ProductsList';
 
 export const StorePage: React.FC = () => {
-	return <ProductsGrid />;
+	return (
+		<>
+			<StoreSearch />
+			<ProductsList />
+			<NavBar />
+		</>
+	);
 };
