@@ -1,30 +1,53 @@
-export function getTokenFromLocalStorage(): string {
-	let data = localStorage.getItem('accessToken');
-	data = data ? data : localStorage.getItem('refreshToken');
-	const token = data ? JSON.parse(data) : '';
+// export function getTokenFromLocalStorage(): string {
+// 	let data = localStorage.getItem('accessToken');
+// 	data = data ? data : localStorage.getItem('refreshToken');
+// 	const token = data ? JSON.parse(data) : '';
 
-	return token;
+// 	return token;
+// }
+
+// export function setTokensToLocalStorage(
+// 	accessToken: string,
+// 	refreshToken: string
+// ): void {
+// 	if (
+// 		localStorage.getItem('accessToken') ||
+// 		localStorage.getItem('refreshToken')
+// 	) {
+// 		localStorage.removeItem('accessToken');
+// 		localStorage.removeItem('refreshToken');
+// 	}
+
+// 	localStorage.setItem('accessToken', JSON.stringify(accessToken));
+// 	localStorage.setItem('refreshToken', JSON.stringify(refreshToken));
+// }
+
+// export function removeTokensFromLocalStorage(): void {
+// 	localStorage.removeItem('accessToken');
+// 	localStorage.removeItem('refreshToken');
+// }
+
+export function getUserDataFromLocalStorage(): string {
+	let data = localStorage.getItem('userData');
+	const userData = data ? JSON.parse(data) : '';
+
+	return userData;
 }
 
-export function setTokensToLocalStorage(
-	accessToken: string,
-	refreshToken: string
+export function setUserDataToLocalStorage(
+	userPassword: string,
+	userLogin: string
 ): void {
-	if (
-		localStorage.getItem('accessToken') ||
-		localStorage.getItem('refreshToken')
-	) {
-		localStorage.removeItem('accessToken');
-		localStorage.removeItem('refreshToken');
+	if (localStorage.getItem('userData')) {
+		localStorage.removeItem('userData');
 	}
 
-	localStorage.setItem('accessToken', JSON.stringify(accessToken));
-	localStorage.setItem('refreshToken', JSON.stringify(refreshToken));
+	localStorage.setItem(
+		'userData',
+		JSON.stringify({ password: userPassword, login: userLogin })
+	);
 }
 
-export function removeTokensFromLocalStorage(): void {
-	localStorage.removeItem('accessToken');
-	localStorage.removeItem('refreshToken');
+export function removeUserDataFromLocalStorage(): void {
+	localStorage.removeItem('userData');
 }
-
-//возможно тут что-то поменяется
