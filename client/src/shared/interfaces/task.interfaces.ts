@@ -6,6 +6,7 @@ export interface ITask {
 	deadline: Date;
 	reward_type: string;
 	reward_amount: number; //возможно поменяется + возможно юзеры добавятся
+	is_done: boolean;
 }
 
-export interface ITaskRequest extends Omit<ITask, 'id'> {}
+export interface ITaskData extends Omit<ITask, 'id'> {}

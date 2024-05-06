@@ -1,5 +1,5 @@
 import instance from '@/shared/api/axios.api';
-import { ITask, ITaskRequest } from '@/shared/interfaces/task.interfaces';
+import { ITask, ITaskData } from '@/shared/interfaces/task.interfaces';
 
 class TaskService {
 	async getAll() {
@@ -10,15 +10,15 @@ class TaskService {
 		return instance.get<ITask>(`tasks/${id}`);
 	}
 
-	async addTask(task: ITask) {
+	async add(task: ITask) {
 		return instance.post<ITask>('tasks', task);
 	}
 
-	async deleteTask(id: number) {
+	async delete(id: number) {
 		return instance.delete<ITask>(`tasks/${id}`);
 	}
 
-	async updateTask(id: number, newTask: ITaskRequest) {
+	async updateTask(id: number, newTask: ITaskData) {
 		return instance.patch<ITask>(`tasks/${id}`, newTask);
 	}
 	//возможно возвращаемые типы поменяются потом

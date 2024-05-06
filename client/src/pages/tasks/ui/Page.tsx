@@ -1,9 +1,10 @@
 import { NavBar } from '@/widgets/navBar/ui/NavBar';
+import { TasksList } from '@/widgets/tasksList';
 
 export const TasksPage: React.FC = () => {
 	return (
 		<>
-			<div>TasksPage</div>
+			<TasksList />
 			<NavBar />
 		</>
 	);

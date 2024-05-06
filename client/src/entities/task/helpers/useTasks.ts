@@ -1,5 +1,5 @@
+import { taskService } from '@/shared/api/task.service';
 import { useQuery } from '@tanstack/react-query';
-import { taskService } from '../api/api';
 
 export function useTasks() {
 	return useQuery({
