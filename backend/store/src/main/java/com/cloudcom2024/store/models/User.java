@@ -4,16 +4,30 @@ import java.math.BigDecimal;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Entity
 @Table(name = "users")
+@Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class User {
     @Id
-    private long id;
+    @GeneratedValue
+    @Column(name = "user_id")
+    private long userId;
+
+    @Column(name = "username")
+    private String username;
     
     @Column(name = "first_name")
     private String firstName;
@@ -23,6 +37,9 @@ public class User {
 
     @Column(name = "father_name")
     private String fatherName;
+
+    @Column(name = "password")
+    private String password;
 
     @Column(name = "coin_balance")
     private BigDecimal coinBalance;
@@ -36,4 +53,7 @@ public class User {
     @OneToOne
     @JoinColumn(name = "basket_id")
     private Basket basket;
+
+    @Column(name = "roles")
+    private String roles;
 }

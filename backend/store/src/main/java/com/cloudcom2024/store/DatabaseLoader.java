@@ -3,18 +3,29 @@ package com.cloudcom2024.store;
 import java.math.BigDecimal;
 
 import org.springframework.boot.CommandLineRunner;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 
 import com.cloudcom2024.store.models.Basket;
 import com.cloudcom2024.store.models.Item;
+import com.cloudcom2024.store.models.User;
 import com.cloudcom2024.store.repositories.ItemRespository;
+import com.cloudcom2024.store.repositories.UserRepository;
 
 @Component
 public class DatabaseLoader implements CommandLineRunner{
     final private ItemRespository itemRespository;
+    final private UserRepository userRepository;
+    final private PasswordEncoder passwordEncoder;
 
-    public DatabaseLoader(ItemRespository itemRespository) {
+    public DatabaseLoader(
+        ItemRespository itemRespository,
+        UserRepository userRepository,
+        PasswordEncoder passwordEncoder
+    ) {
         this.itemRespository = itemRespository;
+        this.userRepository = userRepository;
+        this.passwordEncoder = passwordEncoder;
     }
 
     @Override
@@ -36,6 +47,21 @@ public class DatabaseLoader implements CommandLineRunner{
 
         itemRespository.save(item1);
         itemRespository.save(item2);
+
+        User user = User.builder()
+            .username("test")
+            .password(passwordEncoder.encode("test"))
+            .roles("ROLE_USER")
+            .build();
+
+        User admin = User.builder()
+            .username("admin")
+            .password(passwordEncoder.encode("admin"))
+            .roles("ROLE_ADMIN")
+            .build();
+
+        userRepository.save(user);
+        userRepository.save(admin);
     }
     
 }

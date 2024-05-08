@@ -10,10 +10,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 
+
 @RestController
-@RequestMapping("/api/v01/store")
+@RequestMapping("/store")
+@CrossOrigin(origins = "http://localhost:5173")
 public class StoreController {
     final private StoreService storeService;
 
