@@ -2,7 +2,7 @@ package com.cloudcom2024.store.controllers;
 
 import org.springframework.web.bind.annotation.RestController;
 
-import com.cloudcom2024.store.models.TaskDetail;
+import com.cloudcom2024.store.models.Task;
 import com.cloudcom2024.store.services.TaskService;
 
 import io.swagger.v3.oas.annotations.parameters.RequestBody;
@@ -29,18 +29,18 @@ public class TaskController {
     }
 
     @GetMapping
-    public List<TaskDetail> getTasks() {
+    public List<Task> getTasks() {
         return taskService.getAllTaskDetails();
     }
 
     @PatchMapping()
-    public void partiallyUpdateTask(@RequestBody TaskDetail taskDetail) {
-        taskService.partiallyUpdateTaskDetail(taskDetail);
+    public void partiallyUpdateTask(@RequestBody Task task) {
+        taskService.partiallyUpdateTask(task);
     }
 
     @DeleteMapping("/{taskId}")
     public void deleteTask(@PathVariable Long taskId) {
-        taskService.deleteTaskDetailById(taskId);
+        taskService.deleteTaskById(taskId);
     }
     
 }

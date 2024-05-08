@@ -31,7 +31,7 @@ public class BasicSecurityConfig {
                         .requestMatchers(
                             "/swagger-ui/**",
                             "v3/api-docs/**"
-                            ).permitAll()
+                        ).permitAll()
                 )
                 .httpBasic(Customizer.withDefaults())
                 .build();

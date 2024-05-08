@@ -8,6 +8,6 @@ import org.springframework.stereotype.Repository;
 import com.cloudcom2024.store.models.TaskDetail;
 
 @Repository
-public interface TaskDetailRepository extends CrudRepository<TaskDetail, Long> {
+public interface TaskDetailsRepository extends CrudRepository<TaskDetail, Long> {
     List<TaskDetail> findAll();
 } 

@@ -4,29 +4,29 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
-import com.cloudcom2024.store.models.TaskDetail;
-import com.cloudcom2024.store.repositories.TaskDetailRepository;
+import com.cloudcom2024.store.models.Task;
+import com.cloudcom2024.store.repositories.TaskRepository;
 
 @Service
 public class TaskService {
-    final private TaskDetailRepository taskDetailRepository;    
+    final private TaskRepository taskRepository;    
 
-    public TaskService(TaskDetailRepository taskDetailRepository) {
-        this.taskDetailRepository = taskDetailRepository;
+    public TaskService(TaskRepository taskDetailRepository) {
+        this.taskRepository = taskDetailRepository;
     }
 
-    public List<TaskDetail> getAllTaskDetails() {
-        return taskDetailRepository.findAll();
+    public List<Task> getAllTaskDetails() {
+        return taskRepository.findAll();
     }
 
-    public void deleteTaskDetailById(Long TaskDetailId) {
-        taskDetailRepository.deleteById(TaskDetailId);
+    public void deleteTaskById(Long TaskDetailId) {
+        taskRepository.deleteById(TaskDetailId);
     }
 
-    public void partiallyUpdateTaskDetail(TaskDetail taskDetail) {
-        Long taskDetailId = taskDetail.getTaskDetailId();
-        if (taskDetailRepository.findById(taskDetailId).isPresent()) {
-            taskDetailRepository.save(taskDetail);
+    public void partiallyUpdateTask(Task task) {
+        Long taskDetailId = task.getTaskId();
+        if (taskRepository.findById(taskDetailId).isPresent()) {
+            taskRepository.save(task);
         }
     }
 }
