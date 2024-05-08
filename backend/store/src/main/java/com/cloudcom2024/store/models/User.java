@@ -7,6 +7,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
@@ -47,8 +48,9 @@ public class User {
     //@Column("tamagotchie_id")
     //private Long tamagothieId;
 
-    //@Column("task_id")
-    //private Long taskId;
+    @ManyToOne
+    @JoinColumn(name = "task_detail_id")
+    private TaskDetail taskDetail;
 
     @OneToOne
     @JoinColumn(name = "basket_id")

@@ -3,7 +3,6 @@ package com.cloudcom2024.store.controllers;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.cloudcom2024.store.models.User;
-import com.cloudcom2024.store.services.SimpleUserDetailsService;
 import com.cloudcom2024.store.services.UserService;
 
 import lombok.extern.log4j.Log4j2;

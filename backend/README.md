@@ -3,8 +3,11 @@
     1.1. Перейдите в директорию сервиса: store  
     1.2. Выполните команду: ./mvnw clean install -DskipTests
 2. Запустить docker compose:  
-    2.1. Перейдите в директорию backend
+    2.1. Перейдите в директорию backend  
     2.2. Выполните команду: docker compose up
+
+Swagger доступен по ссылке:
+http://localhost:8080/swagger-ui/index.html
 
 Есть две роли:
 * ADMIN:   

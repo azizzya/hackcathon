@@ -26,8 +26,12 @@ public class BasicSecurityConfig {
                 .authorizeHttpRequests(authorizeRequests ->
                     authorizeRequests
                         .requestMatchers("/register").hasRole("ADMIN")
-                        .requestMatchers("/store").hasAnyRole("ADMIN", "USER")
-                        .anyRequest().authenticated()
+                        .requestMatchers("/store/**").hasAnyRole("ADMIN", "USER")
+                        .requestMatchers("/tasks/**").hasAnyRole("ADMIN", "USER")
+                        .requestMatchers(
+                            "/swagger-ui/**",
+                            "v3/api-docs/**"
+                            ).permitAll()
                 )
                 .httpBasic(Customizer.withDefaults())
                 .build();
