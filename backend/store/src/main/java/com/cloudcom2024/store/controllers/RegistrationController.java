@@ -15,8 +15,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 
 @RestController
 @RequestMapping("/register")
-@Log4j2
 @CrossOrigin(origins = "http://localhost:5173")
+@Log4j2
 public class RegistrationController {
     private UserService userDetailsService;
     private PasswordEncoder passwordEncoder;

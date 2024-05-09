@@ -21,12 +21,13 @@ public class BasicSecurityConfig {
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         return http
-                .csrf(AbstractHttpConfigurer::disable)
-                .cors(AbstractHttpConfigurer::disable)
+                .csrf(csrf -> csrf.disable())
+                .cors(cors -> cors.disable())
                 .authorizeHttpRequests(authorizeRequests ->
                     authorizeRequests
                         .requestMatchers("/register").hasRole("ADMIN")
                         .requestMatchers("/store/**").hasAnyRole("ADMIN", "USER")
+                        .requestMatchers("/chat/**").hasAnyRole("ADMIN", "USER")
                         .requestMatchers("/tasks/**").hasAnyRole("ADMIN", "USER")
                         .requestMatchers(
                             "/swagger-ui/**",
