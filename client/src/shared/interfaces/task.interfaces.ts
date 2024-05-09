@@ -10,3 +10,4 @@ export interface ITask {
 }
 
 export interface ITaskData extends Omit<ITask, 'id'> {}
+export interface ITaskUpdateData extends Partial<ITaskData> {}

@@ -9,9 +9,10 @@ instance.interceptors.request.use(
 	config => {
 		const userData = getUserDataFromLocalStorage();
 		if (userData) {
-			config.headers.Authorization = userData;
+			const { Username, Password } = userData;
+			const base64Credentials = btoa(`${Username}:${Password}`);
+			config.headers.Authorization = `Basic ${base64Credentials}`;
 		}
-		console.log(config.headers.Authorization);
 		return config;
 	},
 	error => {

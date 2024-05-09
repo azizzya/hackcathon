@@ -27,7 +27,10 @@
 // 	localStorage.removeItem('refreshToken');
 // }
 
-export function getUserDataFromLocalStorage(): string {
+export function getUserDataFromLocalStorage(): {
+	Username: string;
+	Password: string;
+} {
 	let data = localStorage.getItem('userData');
 	const userData = data ? JSON.parse(data) : '';
 
@@ -44,7 +47,7 @@ export function setUserDataToLocalStorage(
 
 	localStorage.setItem(
 		'userData',
-		JSON.stringify({ password: userPassword, login: userLogin })
+		JSON.stringify({ Password: userPassword, Username: userLogin })
 	);
 }
 

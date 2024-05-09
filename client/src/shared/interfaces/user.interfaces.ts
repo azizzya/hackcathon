@@ -2,7 +2,7 @@ import { ITamagotchi } from './tamagotchi.interfaces';
 import { ITask } from './task.interfaces';
 
 export interface IUser {
-	id: number;
+	user_id: number;
 	surname: string;
 	name: string;
 	coins: number;
