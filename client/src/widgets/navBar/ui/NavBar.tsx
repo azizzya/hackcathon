@@ -17,6 +17,13 @@ export const NavBar: React.FC = () => {
 			<button className='navbar-button' onClick={() => navigate('/profile')}>
 				profile
 			</button>
+
+			<button
+				className='navbar-button'
+				onClick={() => navigate('/leaderboard')}
+			>
+				leaderboard
+			</button>
 		</div>
 	);
 };

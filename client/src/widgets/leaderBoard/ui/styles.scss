@@ -1,0 +1,15 @@
+@import '../../../shared/ui/shared.scss';
+.leaderBoard-user-wrapper {
+	display: grid;
+	grid-template-columns: 1fr 2fr 1fr;
+
+	width: 100%;
+}
+
+.leaderBoard-wrapper {
+	width: 100%;
+}
+
+.leaderBoard-user-item {
+	text-align: center;
+}

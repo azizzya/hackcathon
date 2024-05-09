@@ -22,6 +22,7 @@ export const AuthForm: React.FC = () => {
 		if (loginMutation.isSuccess) {
 			setUserDataToLocalStorage(passwordInput.value, loginInput.value);
 		}
+		setUserDataToLocalStorage(passwordInput.value, loginInput.value);
 		navigate('/'); //убрать
 	};
 
