@@ -3,7 +3,10 @@
     1.1. Перейдите в директорию сервиса: store  
     1.2. Выполните команду: ./mvnw clean install -DskipTests
 2. Запустить docker compose:  
-! *Если приложение не запускается, пропишите команду docker system prune (на все вопросы отвечайте 'y') и пропишите docker compose build и снова попробуйте выполнить docker compose up*):  
+! Если приложение выдает ошибку, пропишите команду следующее:
+* docker system prune (на все вопросы отвечайте 'y')
+* docker compose build
+В случае нормального выполнения:  
     2.1. Перейдите в директорию backend  
     2.2. Выполните команду: docker compose up
 

@@ -23,7 +23,7 @@ public class StoreController {
     StoreController(StoreService storeService) {
         this.storeService = storeService;
     }
-
+    
     @GetMapping("/items")
     public List<ItemResponse> getAllItems() {
         return storeService.getAllItems().stream()
