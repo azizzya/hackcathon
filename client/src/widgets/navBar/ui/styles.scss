@@ -8,12 +8,13 @@
 	width: 100%;
 	height: 7vh;
 
-	background-color: $primary-color;
+	background-color: $background-color;
 
-	display: flex;
-	flex-direction: row;
-	justify-content: center;
-	gap: 10px;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+	grid-template-rows: auto;
+
+	box-shadow: 0 0 50px rgba(0, 0, 0, 0.2);
 }
 
 .navbar-button {
@@ -23,12 +24,16 @@
 	font-size: 30px;
 
 	color: $background-color;
-	background-color: $primary-color;
+	background-color: $background-color;
 
 	border: none;
-	border-radius: 60px;
 
 	&:active {
-		background-color: #8454fd;
+		fill: #8454fd;
 	}
+}
+
+.navbar-button-img {
+	width: 50%;
+	height: 50%;
 }

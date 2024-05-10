@@ -6,6 +6,7 @@ import { ProfilePage } from './profile/ui/Page';
 import { StorePage } from './store/ui/Page';
 import { TasksCompletingPage } from './taskCompleting/ui/Page';
 import { TasksPage } from './tasks/ui/Page';
+import { ThingsPage } from './things/ui/Page';
 
 export const Routing = () => {
 	return (
@@ -13,6 +14,7 @@ export const Routing = () => {
 			<Route path='/' element={<MainPage />} />
 			<Route path='/auth' element={<AuthPage />} />
 			<Route path='/profile' element={<ProfilePage />} />
+			<Route path='/things' element={<ThingsPage />} />
 			<Route path='/tasks' element={<TasksPage />} />
 			<Route path='/store' element={<StorePage />} />
 			<Route path='/tasks/complete' element={<TasksCompletingPage />} />

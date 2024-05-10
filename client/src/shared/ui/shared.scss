@@ -38,3 +38,9 @@ $accent-color-orange: #fea82f;
 		background-color: #8e61ff;
 	}
 }
+
+.primary-svg {
+	&:focus {
+		fill: #8e61ff;
+	}
+}
