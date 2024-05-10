@@ -14,9 +14,9 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 
 
+@CrossOrigin(origins = "http://localhost:5173", allowCredentials = "true")
 @RestController
 @RequestMapping("/store")
-@CrossOrigin(origins = "http://localhost:5173")
 public class StoreController {
     final private StoreService storeService;
 

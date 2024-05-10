@@ -25,7 +25,7 @@ public class BasicSecurityConfig {
                     authorizeRequests
                         .requestMatchers("/register").hasRole("ADMIN")
                         .requestMatchers("/store/**").hasAnyRole("ADMIN", "USER")
-                        .requestMatchers("/chat/**").hasAnyRole("ADMIN", "USER")
+                        .requestMatchers("/chat", "/chat/**").hasAnyRole("ADMIN", "USER")
                         .requestMatchers("/tasks/**").hasAnyRole("ADMIN", "USER")
                         .requestMatchers(
                             "/swagger-ui/**",
@@ -33,6 +33,7 @@ public class BasicSecurityConfig {
                         ).permitAll()
                 )
                 .httpBasic(Customizer.withDefaults())
+                .csrf(csrf -> csrf.disable())
                 .cors(Customizer.withDefaults())
                 .build();
     }
