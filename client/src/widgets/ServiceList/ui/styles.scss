@@ -1,0 +1,24 @@
+.services-container {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+	grid-template-rows: auto;
+}
+
+.grid-element {
+	width: 100%;
+	height: 100%;
+	border: 1px solid black;
+
+	text-align: center;
+	align-items: center;
+
+	display: flex;
+	justify-content: center;
+}
+
+.services-button {
+	border: 0px;
+	width: 100%;
+	height: 100%;
+	background-color: white;
+}

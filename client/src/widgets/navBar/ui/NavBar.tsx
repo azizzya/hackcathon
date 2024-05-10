@@ -1,43 +1,46 @@
-import { useNavigate } from 'react-router-dom';
 import './styles.scss';
 
-import { MessageSVGComponent } from '@/shared/ui/Message.SVG.Component copy';
-import { ProfileSVGComponent } from '@/shared/ui/Profile.SVG.Component copy 3';
-import { StoreSVGComponent } from '@/shared/ui/Store.SVG.Component';
-import { ThingsSVGComponent } from '@/shared/ui/Things.SVG.Component';
-import { useState } from 'react';
+import { MenuSVGComponent } from '@/shared/ui/SVGs/Menu.SVG.Component';
+import { MessageSVGComponent } from '@/shared/ui/SVGs/Message.SVG.Component copy';
+import { ProfileSVGComponent } from '@/shared/ui/SVGs/Profile.SVG.Component copy 3';
+import { TaskSVGComponent } from '@/shared/ui/SVGs/Tasks.SVG.Component';
+
+import { useLocation, useNavigate } from 'react-router-dom';
 
 export const NavBar: React.FC = () => {
 	const navigate = useNavigate();
+	const location = useLocation();
 
-	const [activeIcon, setActiveIcon] = useState<string>('');
+	const activeIcon = location.pathname.split('/')[1] || '';
 
 	const HandleIconClick = (iconId: string) => {
 		navigate(`/${iconId}`);
-		setActiveIcon(iconId);
 	};
 
 	return (
 		<div className='navbar-wrapper'>
 			<button className='navbar-button' onClick={() => HandleIconClick('')}>
 				<MessageSVGComponent
-					fillColor={activeIcon === '' ? 'purple' : 'grey'}
+					fillColor={activeIcon === '' ? '#6C33FF' : 'grey'}
+					height='50%'
+					width='50%'
 				/>
 			</button>
 			<button
 				className='navbar-button'
-				onClick={() => HandleIconClick('store')}
+				onClick={() => HandleIconClick('tasks')}
 			>
-				<StoreSVGComponent
-					fillColor={activeIcon === 'store' ? 'purple' : 'grey'}
+				<TaskSVGComponent
+					fillColor={activeIcon === 'tasks' ? '#6C33FF' : 'grey'}
+					height='50%'
+					width='50%'
 				/>
 			</button>
-			<button
-				className='navbar-button'
-				onClick={() => HandleIconClick('things')}
-			>
-				<ThingsSVGComponent
-					fillColor={activeIcon === 'things' ? 'purple' : 'grey'}
+			<button className='navbar-button' onClick={() => HandleIconClick('menu')}>
+				<MenuSVGComponent
+					fillColor={activeIcon === 'menu' ? '#6C33FF' : 'grey'}
+					height='40%'
+					width='40%'
 				/>
 			</button>
 			<button
@@ -45,16 +48,11 @@ export const NavBar: React.FC = () => {
 				onClick={() => HandleIconClick('profile')}
 			>
 				<ProfileSVGComponent
-					fillColor={activeIcon === 'profile' ? 'purple' : 'grey'}
+					fillColor={activeIcon === 'profile' ? '#6C33FF' : 'grey'}
+					height='50%'
+					width='50%'
 				/>
 			</button>
-
-			{/* <button
-				className='navbar-button'
-				onClick={() => navigate('/leaderboard')}
-			>
-				leaderboard
-			</button> */}
 		</div>
 	);
 };

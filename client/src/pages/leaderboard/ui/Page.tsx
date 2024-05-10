@@ -1,5 +1,4 @@
 import { LeaderBoard } from '@/widgets/leaderBoard';
-import { NavBar } from '@/widgets/navBar';
 
 export const LeaderBoardPage: React.FC = () => {
 	return (
@@ -7,7 +6,6 @@ export const LeaderBoardPage: React.FC = () => {
 			<div>
 				<LeaderBoard />
 			</div>
-			<NavBar />
 		</>
 	);
 };

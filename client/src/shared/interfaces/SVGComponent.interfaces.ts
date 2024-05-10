@@ -1,3 +1,5 @@
 export interface ISVGComponentProps {
-	fillColor: string;
+	fillColor?: string;
+	width?: string;
+	height?: string;
 }

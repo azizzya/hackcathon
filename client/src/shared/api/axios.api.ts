@@ -3,7 +3,7 @@ import { getUserDataFromLocalStorage } from '../helpers/localStorage.helper';
 
 const instance = axios.create({
 	baseURL: 'http://localhost:8080/',
-	withCredentials: false,
+	withCredentials: true,
 });
 
 instance.interceptors.request.use(
