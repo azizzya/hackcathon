@@ -21,8 +21,6 @@ public class BasicSecurityConfig {
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         return http
-                .csrf(csrf -> csrf.disable())
-                .cors(cors -> cors.disable())
                 .authorizeHttpRequests(authorizeRequests ->
                     authorizeRequests
                         .requestMatchers("/register").hasRole("ADMIN")
@@ -35,6 +33,7 @@ public class BasicSecurityConfig {
                         ).permitAll()
                 )
                 .httpBasic(Customizer.withDefaults())
+                .cors(Customizer.withDefaults())
                 .build();
     }
 }
