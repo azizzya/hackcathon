@@ -13,7 +13,7 @@ export const ProductCard: React.FC<IProductCardProps> = ({
 }) => {
 	return (
 		<div className='card-wrapper'>
-			<img src={image} alt='penis' />
+			<img src={image} alt='product_image' />
 			<div className='product-info-block'>
 				<div className='price'>{`${price} c`}</div>
 				<div className='name'>{name}</div>
