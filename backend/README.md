@@ -8,7 +8,7 @@
 * docker compose build
 В случае нормального выполнения:  
     2.1. Перейдите в директорию backend  
-    2.2. Выполните команду: docker compose up
+    2.2. Выполните команду: docker compose up -d
 
 Swagger доступен по ссылке:
 http://localhost:8080/swagger-ui/index.html
