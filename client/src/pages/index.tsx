@@ -1,6 +1,7 @@
 import Layout from '@/widgets/navBar/ui/Layout';
 import { Route, Routes } from 'react-router-dom';
-import { AuthPage } from './auth/ui/Page';
+
+import { AuthPage } from './auth';
 import { LeaderBoardPage } from './leaderboard';
 import { MainPage } from './main';
 import { MenuPage } from './menu';

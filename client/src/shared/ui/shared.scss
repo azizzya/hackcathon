@@ -5,7 +5,7 @@ $accent-color-red: #ff2e00;
 $accent-color-orange: #fea82f;
 
 .primary-input {
-	border: 4px solid $primary-color;
+	border: 4px solid $text-color;
 	color: $text-color;
 
 	border-radius: 20px;
@@ -17,8 +17,9 @@ $accent-color-orange: #fea82f;
 	width: 100%;
 
 	padding-left: 20px;
+
 	&:focus {
-		border-color: $text-color;
+		border-color: $primary-color;
 		outline: none;
 	}
 }

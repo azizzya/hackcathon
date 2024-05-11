@@ -3,7 +3,7 @@ import instance from './axios.api';
 
 class AuthService {
 	async logIn(user: IUserLogIn) {
-		return instance.post<IResponseLogIn>('/auth/login', user); //дописать возвращаемый тип
+		return instance.post<IResponseLogIn>('/auth', user); //дописать возвращаемый тип
 	}
 }
 

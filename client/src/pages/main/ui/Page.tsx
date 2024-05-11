@@ -1,7 +1,7 @@
-import { useProducts } from '@/entities/product';
+import { useTasks } from '@/entities/task/helpers/useTasks';
 
 export const MainPage: React.FC = () => {
-	const { data } = useProducts();
+	const { data } = useTasks();
 	console.log(data);
 	return (
 		<>

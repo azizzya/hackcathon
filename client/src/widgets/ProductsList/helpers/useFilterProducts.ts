@@ -1,7 +1,7 @@
-import { IProduct } from '../model/interfaces';
+import { IProduct } from '@/shared/interfaces/product.interfaces';
 
 export function useFilterProducts(products: IProduct[], search: string) {
 	return products.filter(product =>
-		product.title.toLowerCase().includes(search.toLowerCase())
+		product.name.toLowerCase().includes(search.toLowerCase())
 	);
 }
