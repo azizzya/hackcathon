@@ -5,10 +5,11 @@ $accent-color-red: #ff2e00;
 $accent-color-orange: #fea82f;
 
 .primary-input {
+	box-sizing: border-box;
 	border: 4px solid $text-color;
 	color: $text-color;
 
-	border-radius: 20px;
+	border-radius: 30px;
 
 	height: 6vh;
 
@@ -16,7 +17,7 @@ $accent-color-orange: #fea82f;
 
 	width: 100%;
 
-	padding-left: 20px;
+	padding-left: 50px;
 
 	&:focus {
 		border-color: $primary-color;
@@ -29,10 +30,10 @@ $accent-color-orange: #fea82f;
 	color: $background-color;
 
 	border: 0px;
-	border-radius: 20px;
+	border-radius: 30px;
 
-	height: 7vh;
-	width: 80%;
+	height: 6vh;
+	width: 100%;
 
 	font-size: 60px;
 	&:hover {

@@ -3,7 +3,7 @@ import './styles.scss';
 export const AuthPlate: React.FC = () => {
 	return (
 		<div className='auth-wrapper'>
-			<p>Авторизация</p>
+			<div className='auth-title'>Авторизация</div>
 			<AuthForm />
 		</div>
 	);

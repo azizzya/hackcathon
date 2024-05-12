@@ -3,7 +3,7 @@ import { ITask, ITaskUpdateData } from '@/shared/interfaces/task.interfaces';
 
 class TaskService {
 	async getAll() {
-		return await instance.get<ITask[]>('tasks');
+		return await instance.get<ITask[]>('tasks/details');
 	}
 
 	async getOne(id: number) {

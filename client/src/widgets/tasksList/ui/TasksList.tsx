@@ -6,11 +6,8 @@ export const TasksList: React.FC = () => {
 	let currentTasks = [];
 	let doneTasks = [];
 	if (data) {
-		console.log(data);
 		currentTasks = data.filter(task => task.taskDetails.done == false);
 		doneTasks = data.filter(task => task.taskDetails.done == true);
-		console.log(currentTasks);
-		console.log(doneTasks);
 	}
 
 	return (

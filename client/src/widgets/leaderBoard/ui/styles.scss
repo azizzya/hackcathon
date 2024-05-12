@@ -1,23 +1,65 @@
 @import '../../../shared/ui/shared.scss';
-.leaderBoard-user-wrapper {
-	display: grid;
-	grid-template-columns: 1fr 1fr 2fr 1fr;
-
-	width: 100%;
-
-	font-size: 40px;
-}
-
 .leaderBoard-wrapper {
 	width: 100%;
-}
 
-.leaderBoard-user-item {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
+
+	gap: 2vh;
+}
+
+.leaderBoard-user-wrapper {
+	display: flex;
+	flex-direction: row;
+
+	width: 100%;
+
+	font-weight: 450;
+	font-size: 45px;
+}
+
+.leaderBoard-user-item-pos {
+	white-space: nowrap;
 	text-align: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+
+	width: 15%;
+}
+
+.leaderBoard-user-item-img-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+
 	align-items: center;
+
+	border-radius: 50%;
+
+	min-height: 50px;
+	min-width: 50px;
+
+	width: 15%;
+}
+.leaderBoard-user-item-text-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+
+	padding-left: 40px;
+
+	width: 50%;
+}
+
+.leaderBoard-user-item-score {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	text-align: end;
+
+	width: 20%;
 }
 
 .leaderBoard-user-item-name {
@@ -26,29 +68,11 @@
 	justify-content: start;
 }
 
-.leaderBoard-user-text-container {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
+.leaderBoard-user-item-login {
+	font-weight: 100;
 }
 
 .leaderBoard-user-img {
-	width: 100%;
 	height: 100%;
 	border-radius: 50%;
-}
-
-.leaderBoard-user-img-container {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-
-	align-items: center;
-
-	border-radius: 50%;
-	width: 80%;
-	height: 80%;
-
-	min-height: 50px;
-	min-width: 50px;
 }
