@@ -1,10 +1,18 @@
+import { useTasks } from '@/entities/task';
 import { Task } from '@/entities/task/ui/Task';
-import { data } from './data';
 
 export const TasksList: React.FC = () => {
-	const tasks = data;
-	const currentTasks = tasks.filter(task => task.is_done == false);
-	const doneTasks = tasks.filter(task => task.is_done == true);
+	const { data } = useTasks();
+	let currentTasks = [];
+	let doneTasks = [];
+	if (data) {
+		console.log(data);
+		currentTasks = data.filter(task => task.taskDetails.done == false);
+		doneTasks = data.filter(task => task.taskDetails.done == true);
+		console.log(currentTasks);
+		console.log(doneTasks);
+	}
+
 	return (
 		<>
 			<p>Активные</p>

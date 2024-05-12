@@ -5,5 +5,6 @@ export function useProducts() {
 	return useQuery({
 		queryFn: () => storeService.getall(),
 		queryKey: ['products'],
+		select: ({ data }) => data,
 	});
 }

@@ -1,12 +1,16 @@
+export interface ITaskDetails {
+	taskDetailId: number;
+	taskDeadline: Date;
+	timeCompletion: Date;
+	done: boolean;
+	task: ITask;
+}
+
 export interface ITask {
-	id: number;
-	text: string;
-	category: string;
-	task_type: string;
-	deadline: Date;
-	reward_type: string;
-	reward_amount: number; //возможно поменяется + возможно юзеры добавятся
-	is_done: boolean;
+	taskId: number;
+	title: string;
+	coinReward: string;
+	description: string;
 }
 
 export interface ITaskData extends Omit<ITask, 'id'> {}

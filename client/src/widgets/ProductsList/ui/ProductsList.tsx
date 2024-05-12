@@ -12,7 +12,7 @@ export const ProductsList: React.FC = () => {
 	return (
 		<div className='products-grid-wrapper'>
 			{data ? (
-				<ProductsGrid products={useFilterProducts(data.data, search)} />
+				<ProductsGrid products={useFilterProducts(data, search)} />
 			) : (
 				<div>error</div>
 			)}

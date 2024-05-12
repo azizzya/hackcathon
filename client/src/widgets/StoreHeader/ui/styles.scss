@@ -1,0 +1,25 @@
+.store-header-grid {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: 1fr;
+}
+
+.store-header-grid-item {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+
+	&-features {
+		height: 50%;
+
+		display: flex;
+		flex-direction: row;
+		justify-content: flex-end;
+		gap: 10%;
+		&-balance {
+			width: 50%;
+		}
+		&-img {
+		}
+	}
+}
