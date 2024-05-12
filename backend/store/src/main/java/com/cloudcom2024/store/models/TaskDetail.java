@@ -1,10 +1,8 @@
 package com.cloudcom2024.store.models;
 
 import java.time.LocalDateTime;
-import java.time.LocalTime;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;

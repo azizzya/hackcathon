@@ -1,10 +1,10 @@
 package com.cloudcom2024.store.models;
 
 import java.math.BigDecimal;
+import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import jakarta.persistence.Column;
@@ -36,6 +36,9 @@ public class Task {
 
     @Column(name = "description")
     private String description;
+
+    @Column(name = "task_to_complete")
+    private Duration taskToComplete;
 
     @OneToMany(mappedBy = "task", fetch = FetchType.EAGER)
     @JsonManagedReference

@@ -5,8 +5,6 @@ import org.springframework.web.bind.annotation.RestController;
 import com.cloudcom2024.store.models.Task;
 import com.cloudcom2024.store.services.TaskService;
 
-import io.swagger.v3.oas.annotations.parameters.RequestBody;
-
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.List;
@@ -14,7 +12,6 @@ import java.util.List;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
 
@@ -31,11 +28,6 @@ public class TaskController {
     @GetMapping
     public List<Task> getTasks() {
         return taskService.getAllTaskDetails();
-    }
-
-    @PatchMapping()
-    public void partiallyUpdateTask(@RequestBody Task task) {
-        taskService.partiallyUpdateTask(task);
     }
 
     @DeleteMapping("/{taskId}")

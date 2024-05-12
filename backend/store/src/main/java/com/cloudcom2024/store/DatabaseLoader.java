@@ -11,14 +11,12 @@ import com.cloudcom2024.store.models.Item;
 import com.cloudcom2024.store.models.Task;
 import com.cloudcom2024.store.models.TaskDetail;
 import com.cloudcom2024.store.models.User;
-import com.cloudcom2024.store.repositories.BasketRepository;
 import com.cloudcom2024.store.repositories.ItemRespository;
 import com.cloudcom2024.store.repositories.TaskDetailsRepository;
 import com.cloudcom2024.store.repositories.TaskRepository;
 import com.cloudcom2024.store.repositories.UserRepository;
 
 import java.time.LocalDateTime;
-import java.time.LocalTime;
 
 @Component
 public class DatabaseLoader implements CommandLineRunner{
@@ -26,7 +24,6 @@ public class DatabaseLoader implements CommandLineRunner{
     final private TaskRepository taskRepository;
     final private TaskDetailsRepository taskDetailsRepository;
     final private UserRepository userRepository;
-    final private BasketRepository basketRepository;
     final private PasswordEncoder passwordEncoder;
 
     public DatabaseLoader(
@@ -34,14 +31,12 @@ public class DatabaseLoader implements CommandLineRunner{
         TaskRepository taskRepository,
         TaskDetailsRepository taskDetailsRepository,
         UserRepository userRepository,
-        BasketRepository basketRepository,
         PasswordEncoder passwordEncoder
     ) {
         this.itemRespository = itemRespository;
         this.taskRepository = taskRepository;
         this.taskDetailsRepository = taskDetailsRepository;
         this.userRepository = userRepository;
-        this.basketRepository = basketRepository;
         this.passwordEncoder = passwordEncoder;
     }
 
@@ -67,8 +62,8 @@ public class DatabaseLoader implements CommandLineRunner{
 
         User user = new User();
         user.setUsername("user");
-        user.setFirstName("dima");
-        user.setLastName("zakovalov");
+        user.setFirstname("dima");
+        user.setLastname("zakovalov");
         user.setPassword(passwordEncoder.encode("user"));
         user.setCoinBalance(new BigDecimal("100"));
         user.setRoles("ROLE_USER");
@@ -76,8 +71,8 @@ public class DatabaseLoader implements CommandLineRunner{
 
         User admin = new User();
         admin.setUsername("admin");
-        admin.setFirstName("dima");
-        admin.setLastName("zakovalov");
+        admin.setFirstname("dima");
+        admin.setLastname("zakovalov");
         admin.setPassword(passwordEncoder.encode("admin"));
         admin.setCoinBalance(new BigDecimal("100"));
         admin.setRoles("ROLE_ADMIN");
