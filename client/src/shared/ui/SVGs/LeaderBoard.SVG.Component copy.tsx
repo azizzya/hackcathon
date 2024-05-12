@@ -1,9 +1,9 @@
 import { ISVGComponentProps } from '../../interfaces/SVGComponent.interfaces';
 
 export const LeaderBoardSVGComponent: React.FC<ISVGComponentProps> = ({
-	fillColor,
-	height,
-	width,
+	fillColor = 'black',
+	height = '100%',
+	width = '100%',
 }) => {
 	return (
 		<svg

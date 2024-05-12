@@ -2,7 +2,7 @@ import { ISVGComponentProps } from '../../interfaces/SVGComponent.interfaces';
 
 export const StoreSVGComponent: React.FC<ISVGComponentProps> = ({
 	fillColor = 'black',
-	height = '100%',
+	height = '85%',
 	width = '100%',
 }) => {
 	return (

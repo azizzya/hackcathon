@@ -4,6 +4,10 @@ $background-color: white;
 $accent-color-red: #ff2e00;
 $accent-color-orange: #fea82f;
 
+.page-wrapper {
+	margin-inline: 4%;
+}
+
 .primary-input {
 	box-sizing: border-box;
 	border: 4px solid $text-color;
@@ -18,6 +22,8 @@ $accent-color-orange: #fea82f;
 	width: 100%;
 
 	padding-left: 50px;
+	padding-bottom: 1%;
+	padding-top: 1%;
 
 	&:focus {
 		border-color: $primary-color;
@@ -26,6 +32,13 @@ $accent-color-orange: #fea82f;
 }
 
 .primary-button {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+
+	text-align: center;
+	align-items: center;
+
 	background-color: $primary-color;
 	color: $background-color;
 
@@ -36,8 +49,15 @@ $accent-color-orange: #fea82f;
 	width: 100%;
 
 	font-size: 60px;
-	&:hover {
-		background-color: #8e61ff;
+
+	padding-inline: 5%;
+
+	box-sizing: border-box;
+
+	&:focus {
+		background-color: $background-color;
+		color: $primary-color;
+		border: 4px solid $primary-color;
 	}
 }
 

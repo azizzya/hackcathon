@@ -22,3 +22,38 @@
 	height: 100%;
 	background-color: white;
 }
+
+.menu-button-content-container {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	gap: 6%;
+	width: 100%;
+
+	&-img {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+
+		// align-items: start;
+
+		width: 15%;
+	}
+	&-text {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+
+		text-align: start;
+
+		width: 75%;
+	}
+}
+
+.service-list-wrapper {
+	display: flex;
+	flex-direction: column;
+	justify-content: start;
+
+	gap: 3vh;
+}
