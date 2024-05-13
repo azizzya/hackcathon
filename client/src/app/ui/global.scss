@@ -1,23 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;700&display=swap');
 
 
+.html, body {
+	margin: 0px;
+	padding: 0px;
+}
 
-// body {
-// 	font-family: 'Roboto Mono', monospace;
-// 	font-size: 60px;
-// 	margin: 0px;
-// 	padding: 0px;
-// }
-// input,
-// button {
-// 	font-family: 'Roboto Mono', monospace;
-// 	font-size: 60px;
-// }
+body {
+	font-family: 'Roboto Mono', monospace;
+}
 
-// html {
-// 	margin: 0px;
-// 	padding: 0px;
-// }
+input,
+button {
+	font-family: 'Roboto Mono', monospace;
+}
+
 
 $width:768px;
 

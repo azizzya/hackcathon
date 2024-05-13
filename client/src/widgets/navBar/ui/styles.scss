@@ -1,39 +1,30 @@
-// @import '../../../shared/ui/shared.scss';
+@import '../../../shared/ui/shared.scss';
 
-// .navbar-wrapper {
-// 	position: fixed;
-// 	bottom: 0;
-// 	left: 0;
+.navbar-wrapper {
+	position: fixed;
+	bottom: 0;
+	left: 0;
 
-// 	width: 100%;
-// 	height: 7vh;
+	width: 100%;
+	height: 48px;
 
-// 	background-color: $background-color;
+	background-color: $background-color;
 
-// 	display: grid;
-// 	grid-template-columns: 1fr 1fr 1fr 1fr;
-// 	grid-template-rows: auto;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+	grid-template-rows: auto;
 
-// 	box-shadow: 0 0 50px rgba(0, 0, 0, 0.2);
-// }
+	box-shadow: 0 0 50px rgba(0, 0, 0, 0.2);
+}
 
-// .navbar-button {
-// 	width: 100%;
-// 	height: 100%;
+.navbar-button {
+	width: 100%;
+	height: 100%;
 
-// 	font-size: 30px;
+    padding: 0;
+    margin: 0;
 
-// 	color: $background-color;
-// 	background-color: $background-color;
-
-// 	border: none;
-
-// 	&:active {
-// 		fill: #8454fd;
-// 	}
-// }
-
-// .navbar-button-img {
-// 	width: 50%;
-// 	height: 50%;
-// }
+	color: $background-color;
+	background-color: $background-color;
+	border: none;
+}

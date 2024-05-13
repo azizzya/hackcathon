@@ -1,27 +1,33 @@
-// .auth-wrapper {
-// 	height: 50vh;
-// 	margin: auto;
-// 	margin-top: 60%;
-// 	text-align: center;
-// }
+.upper-auth-wrapper {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
-// .auth-form {
-// 	margin: auto;
+.auth-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
-// 	display: grid;
-// 	grid-template-rows: 3fr 1fr;
+.auth-form {
+	width: 300px;
+}
 
-// 	width: 80%;
-// }
+.auth-form-input-container {
+    margin-top: 30px;
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}
 
-// .auth-form-input-container {
-// 	display: flex;
-// 	flex-direction: column;
-// 	gap: 50px;
-// }
+.auth-title {
+	font-size: 48px;
+	font-weight: 500;
+}
 
-// .auth-title {
-// 	font-size: 130px;
-// 	font-weight: 500;
-// 	margin-bottom: 8%;
-// }
+.primary-button {
+    margin-top: 30px;
+}

@@ -8,7 +8,7 @@ export const TasksListsContainer: React.FC = () => {
 	const doneTasks = data.filter(task => task.id_done == true);
 
 	return (
-		<>
+		<div className='tasks'>
 			<div>
 				<p>Активные</p>
 				<TasksList type='active' tasks={currentTasks} />
@@ -17,6 +17,6 @@ export const TasksListsContainer: React.FC = () => {
 				<p>Выполненные</p>
 				<TasksList type='done' tasks={doneTasks} />
 			</div>
-		</>
+		</div>
 	);
 };
