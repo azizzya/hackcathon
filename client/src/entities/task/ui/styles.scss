@@ -1,54 +1,47 @@
-// @import '../../../shared/ui/shared.scss';
+@import '../../../shared/ui/shared.scss';
 
-// .task-wrapper {
-// 	&-active {
-// 		box-sizing: border-box;
+.task-wrapper {
+	&-active {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
 
-// 		display: flex;
-// 		flex-direction: row;
-// 		justify-content: flex-start;
+	    box-sizing: border-box;
+		width: 100%;
+		min-height: 48px;
 
-// 		width: 100%;
-// 		height: 5vh;
+		border-radius: 12px;
+		border: 1px solid #68c60a;
 
-// 		border-radius: 25px;
-// 		border: 1px solid #68c60a;
-// 		box-shadow: 0 0 20px #68c60a;
+		box-shadow: 0px 0px 16px rgba(104, 198, 10, 0.30);
 
-// 		padding-left: 4%;
-// 	}
+		padding-left: 4%;
+	}
 
-// 	&-done {
-// 		display: flex;
-// 		flex-direction: row;
+	&-done {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
 
-// 		width: 100%;
-// 		height: 5vh;
+		box-sizing: border-box;
+		width: 100%;
+		min-height: 48px;
 
-// 		border-radius: 25px;
+		border-radius: 12px;
 
-// 		border: 1px solid $primary-color;
-// 		box-shadow: 0 0 20px $primary-color;
-// 		box-sizing: border-box;
+		border: 1px solid $primary-color;
+		box-shadow: 0px 0px 16px rgba(107.64, 50.79, 255, 0.30);
 
-// 		text-decoration: line-through;
+		text-decoration: line-through;
 
-// 		padding-left: 4%;
-// 	}
-// }
+		padding-left: 16px;
+	}
+}
 
-// @mixin taskBorder($color) {
-// 	border: 4px solid $color;
-// }
-
-// .task-title {
-// 	width: 90%;
-// 	font-size: 60px;
-// }
-
-// .task-decline-btn {
-// 	font-size: 60px;
-// 	border-radius: 20px;
-// 	border: none;
-// 	background-color: $background-color;
-// }
+.task-title {
+	font-size: 20px;
+    display: flex;
+    align-items: center;
+}

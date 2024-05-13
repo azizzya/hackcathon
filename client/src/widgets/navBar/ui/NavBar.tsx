@@ -18,7 +18,7 @@ export const NavBar: React.FC = () => {
 	};
 
 	return (
-		<div className='navbar-wrapper'>
+		<nav className='navbar-wrapper'>
 			<button 
 				className='navbar-button' 
 				onClick={() => HandleIconClick('')
@@ -62,6 +62,6 @@ export const NavBar: React.FC = () => {
 					width='28px'
 				/>
 			</button>
-		</div>
+		</nav>
 	);
 };

@@ -1,3 +1,5 @@
+import './styles.scss'
+
 import { TasksList } from '@/features/TasksList';
 import { tasksData } from './data';
 
@@ -9,12 +11,12 @@ export const TasksListsContainer: React.FC = () => {
 
 	return (
 		<div className='tasks'>
-			<div>
-				<p>Активные</p>
+			<div className='tasks-block'>
+				<h2>Активные</h2>
 				<TasksList type='active' tasks={currentTasks} />
 			</div>
-			<div>
-				<p>Выполненные</p>
+			<div className='tasks-block'>
+				<h2>Выполненные</h2>
 				<TasksList type='done' tasks={doneTasks} />
 			</div>
 		</div>

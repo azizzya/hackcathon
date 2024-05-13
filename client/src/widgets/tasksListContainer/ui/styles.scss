@@ -1,0 +1,12 @@
+@import '../../../shared/ui/shared.scss';
+
+h2 {
+    color: $text-color;
+    font-size: 24px;
+    font-weight: 200;
+    margin: 0;
+}
+
+.tasks-block {
+    margin-top: 24px;
+}
