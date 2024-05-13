@@ -5,7 +5,7 @@ import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -41,7 +41,7 @@ public class Task {
     private Duration taskToComplete;
 
     @OneToMany(mappedBy = "task", fetch = FetchType.EAGER)
-    @JsonManagedReference
+    @JsonBackReference
     private List<TaskDetail> taskDetails = new ArrayList<>();
 
     public void setTaskDetail(TaskDetail taskDetail) {

@@ -3,6 +3,8 @@ package com.cloudcom2024.store.models;
 import java.time.LocalDateTime;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -26,23 +28,19 @@ public class TaskDetail {
     @Column(name = "task_deadline")
     private LocalDateTime taskDeadline;
 
-    @NotNull
     @Column(name = "time_completed")
     private LocalDateTime timeCompletion;
 
-    @NotNull
     @Column(name = "is_done")
     private boolean isDone;
 
-    @NotNull
     @ManyToOne
     @JoinColumn(name = "user_id")
     @JsonBackReference
     private User user;
 
-    @NotNull
     @ManyToOne
     @JoinColumn(name = "task_id")
-    @JsonBackReference
+    @JsonManagedReference
     private Task task;
 }
