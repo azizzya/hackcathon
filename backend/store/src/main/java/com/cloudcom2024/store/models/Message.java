@@ -1,6 +1,7 @@
 package com.cloudcom2024.store.models;
 
 import com.cloudcom2024.store.daos.MessageDAO;
+import com.cloudcom2024.store.dtos.MessageResponse;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -46,5 +47,13 @@ public class Message {
         messageDAO.setRole(role);
         messageDAO.setContent(message);
         return messageDAO;
+    }
+
+    public MessageResponse convertToMessageResponse() {
+        MessageResponse messageResponse = new MessageResponse();
+        messageResponse.setMessage(message);
+        messageResponse.setMessageId(messageId);
+        messageResponse.setRole(role);
+        return messageResponse;
     }
 }

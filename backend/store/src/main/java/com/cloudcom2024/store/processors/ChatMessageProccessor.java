@@ -1,16 +1,12 @@
 package com.cloudcom2024.store.processors;
 
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.UUID;
-import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.context.annotation.Scope;
-import org.springframework.core.env.Environment;
 import org.springframework.stereotype.Component;
 import org.springframework.web.context.annotation.SessionScope;
 
@@ -92,8 +88,6 @@ public class ChatMessageProccessor {
             .map(x -> x.convertDAOMessage()) 
             .collect(Collectors.toList());
 
-        log.info(messages);
-
         MessageDAO newMessage = chatMessageRequest.convertToMessageDAO();
         messages.add(newMessage);
         Message message = newMessage.convertToMessage();
@@ -109,8 +103,9 @@ public class ChatMessageProccessor {
         
         int lastIndex = messageResponse.getChoices().size() - 1;
 
-        return messageResponse.getChoices().get(lastIndex)
-            .getMessage()
-            .getContent();
+        //return messageResponse.getChoices().get(lastIndex)
+            //.getMessage()
+            //.getContent();
+        return null;
     }
 }
