@@ -6,8 +6,8 @@ import { useNavigate } from 'react-router-dom';
 export function useLogInMutation() {
 	const navigate = useNavigate();
 	return useMutation({
-		mutationFn: (user: IUserLogIn) => authService.logIn(user),
-		mutationKey: ['login'],
+		mutationFn: (user: IUserLogIn) => authService.auth(user),
+		mutationKey: ['auth'],
 		onSuccess: () => {
 			navigate('/');
 		},
