@@ -1,73 +1,73 @@
-$primary-color: #6c33ff;
-$text-color: #1c0221;
-$background-color: white;
-$accent-color-red: #ff2e00;
-$accent-color-orange: #fea82f;
+// $primary-color: #6c33ff;
+// $text-color: #1c0221;
+// $background-color: white;
+// $accent-color-red: #ff2e00;
+// $accent-color-orange: #fea82f;
 
-.page-wrapper {
-	margin-inline: 4%;
-}
+// .page-wrapper {
+// 	margin-inline: 4%;
+// }
 
-.primary-input {
-	box-sizing: border-box;
-	border: 4px solid $text-color;
-	color: $text-color;
+// .primary-input {
+// 	box-sizing: border-box;
+// 	border: 4px solid $text-color;
+// 	color: $text-color;
 
-	border-radius: 30px;
+// 	border-radius: 30px;
 
-	height: 6vh;
+// 	height: 6vh;
 
-	font-size: 60px;
+// 	font-size: 60px;
 
-	width: 100%;
+// 	width: 100%;
 
-	padding-left: 50px;
-	padding-bottom: 1%;
-	padding-top: 1%;
+// 	padding-left: 50px;
+// 	padding-bottom: 1%;
+// 	padding-top: 1%;
 
-	&:focus {
-		border-color: $primary-color;
-		outline: none;
-	}
-}
+// 	&:focus {
+// 		border-color: $primary-color;
+// 		outline: none;
+// 	}
+// }
 
-.primary-button {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
+// .primary-button {
+// 	display: flex;
+// 	flex-direction: column;
+// 	justify-content: center;
 
-	text-align: center;
-	align-items: center;
+// 	text-align: center;
+// 	align-items: center;
 
-	background-color: $primary-color;
-	color: $background-color;
+// 	background-color: $primary-color;
+// 	color: $background-color;
 
-	border: 0px;
-	border-radius: 30px;
+// 	border: 0px;
+// 	border-radius: 30px;
 
-	height: 6vh;
-	width: 100%;
+// 	height: 6vh;
+// 	width: 100%;
 
-	font-size: 60px;
+// 	font-size: 60px;
 
-	padding-inline: 5%;
+// 	padding-inline: 5%;
 
-	box-sizing: border-box;
+// 	box-sizing: border-box;
 
-	&:focus {
-		background-color: $background-color;
-		color: $primary-color;
-		border: 4px solid $primary-color;
-	}
-}
+// 	&:focus {
+// 		background-color: $background-color;
+// 		color: $primary-color;
+// 		border: 4px solid $primary-color;
+// 	}
+// }
 
-.primary-svg {
-	&:focus {
-		fill: #8e61ff;
-	}
-}
+// .primary-svg {
+// 	&:focus {
+// 		fill: #8e61ff;
+// 	}
+// }
 
-.primary-title {
-	font-size: 110px;
-	font-weight: 500;
-}
+// .primary-title {
+// 	font-size: 110px;
+// 	font-weight: 500;
+// }
