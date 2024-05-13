@@ -74,7 +74,7 @@ public class DatabaseLoader implements CommandLineRunner{
         admin.setFirstname("dima");
         admin.setLastname("zakovalov");
         admin.setPassword(passwordEncoder.encode("admin"));
-        admin.setCoinBalance(new BigDecimal("100"));
+        admin.setCoinBalance(new BigDecimal("1000"));
         admin.setRoles("ROLE_ADMIN");
         admin.setTaskDetail(null);
 

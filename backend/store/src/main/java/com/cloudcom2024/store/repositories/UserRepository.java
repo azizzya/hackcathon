@@ -1,5 +1,6 @@
 package com.cloudcom2024.store.repositories;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.data.jpa.repository.Query;
@@ -15,4 +16,10 @@ public interface UserRepository extends CrudRepository<User, Long> {
         nativeQuery = true
     )
     Optional<User> findUserByUsername(String username);
+
+    @Query(
+        value = "SELECT * FROM users ORDER BY coin_balance DESC LIMIT 100",
+        nativeQuery = true
+    )
+    List<User> getAllUsersSortByCoinBalanceDESCWithLimit100();
 } 

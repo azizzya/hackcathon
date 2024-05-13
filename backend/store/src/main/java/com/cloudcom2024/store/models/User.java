@@ -4,6 +4,8 @@ import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.cloudcom2024.store.dtos.UserResponse;
+import com.cloudcom2024.store.repositories.UserRepository;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import jakarta.persistence.Column;
@@ -71,5 +73,19 @@ public class User {
 
     public void setMessage(Message message) {
         messages.add(message);
+    }
+
+    public UserResponse convertToUserResponse() {
+        UserResponse userResponse = new UserResponse();
+        userResponse.setUserId(userId);
+        userResponse.setUsername(username);
+        userResponse.setFirstname(firstname);
+        userResponse.setLastname(lastname);
+        userResponse.setFathername(fathername);
+        userResponse.setCoinBalance(coinBalance);
+        userResponse.setRoles(roles);
+        userResponse.setEmail(email);
+        userResponse.setPhoneNumber(phoneNumber);
+        return userResponse;
     }
 }
