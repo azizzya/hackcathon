@@ -5,6 +5,11 @@ export function useTasks() {
 	return useQuery({
 		queryKey: ['tasks'],
 		queryFn: () => taskService.getAll(),
-		select: ({ data }) => data,
+		select: ({ data }) => {
+			return {
+				currentTasks: data.filter(task => !task.is_done),
+				completedTasks: data.filter(task => task.is_done),
+			};
+		},
 	});
 }

@@ -1,12 +1,16 @@
 @import '../../../shared/ui/shared.scss';
 
 .task-wrapper {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+
 	&-active {
 		box-sizing: border-box;
 
 		display: flex;
-		flex-direction: row;
-		justify-content: flex-start;
+		flex-direction: column;
+		justify-content: center;
 
 		width: 100%;
 		height: 5vh;
@@ -20,7 +24,8 @@
 
 	&-done {
 		display: flex;
-		flex-direction: row;
+		flex-direction: column;
+		justify-content: center;
 
 		width: 100%;
 		height: 5vh;
@@ -42,8 +47,7 @@
 }
 
 .task-title {
-	width: 90%;
-	font-size: 60px;
+	font-size: 40px;
 }
 
 .task-decline-btn {

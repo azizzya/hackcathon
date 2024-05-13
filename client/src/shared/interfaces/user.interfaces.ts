@@ -11,6 +11,28 @@ export interface IUser {
 	tasks: ITask[]; //возможно поменяется
 }
 
+export interface IUserProfile {
+	user_id: number;
+
+	coin_balance: number;
+	father_name: string;
+	firstname: string;
+	lastname: string;
+	username: string;
+
+	profileImg: string;
+	qrCodeImg: string;
+}
+
+export interface ILeader {
+	user_id: number;
+	firstname: string;
+	lastname: string;
+	username: string;
+	coin_balance: number;
+	profileImg: string;
+}
+
 export interface IUserLogIn {
 	login: string;
 	password: string;

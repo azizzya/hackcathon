@@ -2,7 +2,7 @@ export interface ITaskDetails {
 	taskDetailId: number;
 	taskDeadline: Date;
 	timeCompletion: Date;
-	id_done: boolean;
+	is_done: boolean;
 	task: ITask;
 }
 
@@ -13,5 +13,5 @@ export interface ITask {
 	description: string;
 }
 
-export interface ITaskData extends Omit<ITask, 'id'> {}
-export interface ITaskUpdateData extends Partial<ITaskData> {}
+export interface ITaskDetailsData extends Omit<ITask, 'id'> {}
+export interface ITaskDetailsUpdateData extends Partial<ITaskDetails> {}

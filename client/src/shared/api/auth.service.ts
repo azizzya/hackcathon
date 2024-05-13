@@ -1,9 +1,9 @@
-import { IResponseLogIn, IUserLogIn } from '../interfaces/user.interfaces';
+import { IUserLogIn } from '../interfaces/user.interfaces';
 import instance from './axios.api';
 
 class AuthService {
-	async logIn(user: IUserLogIn) {
-		return instance.post<IResponseLogIn>('/auth', user); //дописать возвращаемый тип
+	async auth(user: IUserLogIn) {
+		return instance.post('/auth', user);
 	}
 }
 

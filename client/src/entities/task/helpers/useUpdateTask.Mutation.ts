@@ -8,6 +8,7 @@ export function useUpdateTask() {
 		mutationFn: (task_id: number) =>
 			taskService.updateTask(task_id, { is_done: true }),
 		mutationKey: ['task', 'update'],
+		retry: 3,
 		onSuccess: () => navigate('/tasks'),
 		onError: () => console.log('error'),
 	});
