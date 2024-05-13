@@ -1,12 +1,13 @@
-import { useTasks } from '@/entities/task';
-import { TasksList } from '@/widgets/tasksList';
-
+import '@/shared/ui/shared.scss';
+import { TasksListsContainer } from '@/widgets/tasksListContainer';
+import './styles.scss';
 export const TasksPage: React.FC = () => {
-	const { data } = useTasks();
-	console.log(data);
 	return (
-		<>
-			<TasksList />
-		</>
+		<div className='page-wrapper'>
+			<header className='tasks-page-header'>
+				<div className='primary-title'>Задания</div>
+			</header>
+			<TasksListsContainer />
+		</div>
 	);
 };

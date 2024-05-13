@@ -1,16 +1,44 @@
 @import '../../../shared/ui/shared.scss';
 
 .task-wrapper {
-	display: flex;
-	flex-direction: row;
+	&-active {
+		box-sizing: border-box;
 
-	width: 100%;
-	height: 4vh;
+		display: flex;
+		flex-direction: row;
+		justify-content: flex-start;
 
-	border: 4px solid $primary-color;
-	border-radius: 20px;
+		width: 100%;
+		height: 5vh;
 
-	padding: 10px;
+		border-radius: 25px;
+		border: 1px solid #68c60a;
+		box-shadow: 0 0 20px #68c60a;
+
+		padding-left: 4%;
+	}
+
+	&-done {
+		display: flex;
+		flex-direction: row;
+
+		width: 100%;
+		height: 5vh;
+
+		border-radius: 25px;
+
+		border: 1px solid $primary-color;
+		box-shadow: 0 0 20px $primary-color;
+		box-sizing: border-box;
+
+		text-decoration: line-through;
+
+		padding-left: 4%;
+	}
+}
+
+@mixin taskBorder($color) {
+	border: 4px solid $color;
 }
 
 .task-title {

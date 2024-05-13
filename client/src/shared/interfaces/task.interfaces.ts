@@ -2,14 +2,14 @@ export interface ITaskDetails {
 	taskDetailId: number;
 	taskDeadline: Date;
 	timeCompletion: Date;
-	done: boolean;
+	id_done: boolean;
 	task: ITask;
 }
 
 export interface ITask {
 	taskId: number;
 	title: string;
-	coinReward: string;
+	coinReward: number;
 	description: string;
 }
 
