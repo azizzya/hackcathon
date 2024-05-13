@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 
 import com.cloudcom2024.store.dtos.TaskDetailRequest;
+import com.cloudcom2024.store.exceptions.TaskDetailNotFoundException;
 import com.cloudcom2024.store.models.TaskDetail;
 import com.cloudcom2024.store.models.User;
 import com.cloudcom2024.store.repositories.TaskDetailsRepository;
@@ -24,8 +25,11 @@ public class TaskDetailsService {
     }
 
     public void updateTaskDetailIsDone(TaskDetailRequest taskDetailRequest) {
-        //User user = userRepository.findUserByUsername(taskDetailRequest.getUsername()).get();
-        //List<TaskDetail> userTaskDetails = user.getTaskDetails();
+        boolean isTaskDetailExists = taskDetailsRepository.findById(taskDetailRequest.getTaskDetailID()).isPresent();
+        if (!isTaskDetailExists) {
+            throw new TaskDetailNotFoundException("task detail not found",
+                taskDetailRequest.getTaskDetailID());
+        }
 
         taskDetailsRepository.updateTaskDetailIsDone(
             taskDetailRequest.isDone(),

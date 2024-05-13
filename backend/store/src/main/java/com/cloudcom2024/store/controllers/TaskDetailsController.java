@@ -34,7 +34,7 @@ public class TaskDetailsController {
     }
 
     @PatchMapping("/{taskDetailID}")
-    public TaskDetail partiallyUpdateTaskDetailByID(
+    public void partiallyUpdateTaskDetailByID(
         @RequestHeader(name = HttpHeaders.AUTHORIZATION) String authorization,
         @PathVariable Long taskDetailID,
         @RequestBody TaskDetailRequest taskDetailRequest
@@ -44,7 +44,6 @@ public class TaskDetailsController {
         taskDetailRequest.setTaskDetailID(taskDetailID);
 
         taskDetailsService.updateTaskDetailIsDone(taskDetailRequest);
-        return null;
     }
 
     @GetMapping
