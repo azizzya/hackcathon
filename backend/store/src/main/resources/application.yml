@@ -19,6 +19,5 @@ logging:
                 security: debug
 
 
-name:
-    service:
-        url: https://ngw.devices.sberbank.ru:9443/api/v2/oauth
+gigachat:
+    authtoken: ${GIGACHAT_AUTHTOKEN}

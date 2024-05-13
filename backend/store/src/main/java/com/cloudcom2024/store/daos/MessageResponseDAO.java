@@ -1,16 +1,14 @@
 package com.cloudcom2024.store.daos;
 
+import java.util.ArrayList;
 import java.util.List;
 
-import com.fasterxml.jackson.annotation.JsonRootName;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import lombok.Data;
 
 @Data
-@JsonRootName(value = "choices")
 public class MessageResponseDAO {
-    private List<MessageDAO> messages;
+    @JsonProperty("choices")
+    private List<ChoiceDAO> choices = new ArrayList<>();
 }
-
-
-

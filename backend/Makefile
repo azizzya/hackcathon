@@ -7,21 +7,12 @@ db-local:
 	-p 5432:5432 \
 	-d postgres:alpine
 
-compile-app-linux:
+compile-app:
 	./store/mvnw clean install -DskipTests -f store/
 
-clean-docker-linux: compile-app-linux
+clean-docker: compile-app
 	docker system prune -a --volumes -f
 
-run-linux: clean-docker-linux
-	docker compose up -d
-
-
-compile-app-win:
-	.\store\mvnw clean install -DskipTests -f store\
-
-clean-docker-win: compile-app-win
-	docker system prune -a --volumes -f
-
-run-win: clean-docker-win
+run: clean-docker
+	docker compose build
 	docker compose up -d

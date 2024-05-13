@@ -12,6 +12,8 @@ services:
       - SPRING_DATASOURCE_USERNAME=root
       - SPRING_DATASOURCE_PASSWORD=root
       - SPRING_JPA_HIBERNATE_DDL_AUTO=update
+      - USE_SYSTEM_CA_CERTS=1
+      - GIGACHAT_AUTHTOKEN=${GIGACHAT_AUTHTOKEN}
     depends_on:
       - postgres
     networks:

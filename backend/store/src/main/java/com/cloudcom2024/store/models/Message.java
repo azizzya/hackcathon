@@ -13,7 +13,6 @@ import lombok.Data;
 
 @Entity
 @Table(name = "messages")
-@Data
 public class Message {
     @Id
     @GeneratedValue
@@ -29,6 +28,18 @@ public class Message {
     @ManyToOne
     @JoinColumn(name = "user_id")
     private User user;
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
+    }
 
     public MessageDAO convertDAOMessage() {
         MessageDAO messageDAO = new MessageDAO();
