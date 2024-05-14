@@ -2,6 +2,7 @@ package com.cloudcom2024.store;
 
 import java.math.BigDecimal;
 
+import org.jeasy.random.EasyRandom;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
@@ -17,6 +18,9 @@ import com.cloudcom2024.store.repositories.TaskRepository;
 import com.cloudcom2024.store.repositories.UserRepository;
 
 import java.time.LocalDateTime;
+import java.util.List;
+import java.util.stream.Collectors;
+
 
 @Component
 public class DatabaseLoader implements CommandLineRunner{
@@ -25,6 +29,7 @@ public class DatabaseLoader implements CommandLineRunner{
     final private TaskDetailsRepository taskDetailsRepository;
     final private UserRepository userRepository;
     final private PasswordEncoder passwordEncoder;
+    //final private EasyRandom easyRandom;
 
     public DatabaseLoader(
         ItemRespository itemRespository,
@@ -32,16 +37,24 @@ public class DatabaseLoader implements CommandLineRunner{
         TaskDetailsRepository taskDetailsRepository,
         UserRepository userRepository,
         PasswordEncoder passwordEncoder
+     //   EasyRandom easyRandom
     ) {
         this.itemRespository = itemRespository;
         this.taskRepository = taskRepository;
         this.taskDetailsRepository = taskDetailsRepository;
         this.userRepository = userRepository;
         this.passwordEncoder = passwordEncoder;
+      //  this.easyRandom = easyRandom;
     }
 
     @Override
     public void run(String... strings) throws Exception {
+        EasyRandom randomDataGenerator = new EasyRandom();
+        List<Item> items = randomDataGenerator.objects(Item.class, 7)
+            .collect(Collectors.toList());
+
+        itemRespository.saveAll(items);
+
         Basket basket = new Basket();
         basket.setTotalPrice(new BigDecimal("204.4"));
 
@@ -67,6 +80,7 @@ public class DatabaseLoader implements CommandLineRunner{
         user.setPassword(passwordEncoder.encode("user"));
         user.setCoinBalance(new BigDecimal("100"));
         user.setRoles("ROLE_USER");
+        user.setEmail("user@mail.ru");
         user.setTaskDetail(null);
 
         User admin = new User();
@@ -76,6 +90,7 @@ public class DatabaseLoader implements CommandLineRunner{
         admin.setPassword(passwordEncoder.encode("admin"));
         admin.setCoinBalance(new BigDecimal("1000"));
         admin.setRoles("ROLE_ADMIN");
+        admin.setEmail("admin@mail.ru");
         admin.setTaskDetail(null);
 
         userRepository.save(user);

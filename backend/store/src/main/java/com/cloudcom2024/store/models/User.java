@@ -5,9 +5,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.cloudcom2024.store.dtos.UserResponse;
-import com.cloudcom2024.store.repositories.UserRepository;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;

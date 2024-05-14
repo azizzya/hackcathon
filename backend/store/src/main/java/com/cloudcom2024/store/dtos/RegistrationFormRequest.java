@@ -6,10 +6,12 @@ import org.springframework.stereotype.Component;
 import com.cloudcom2024.store.models.User;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
-@Component
 @Data
+@AllArgsConstructor
 public class RegistrationFormRequest {
     final private PasswordEncoder passwordEncoder;
 
