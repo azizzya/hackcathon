@@ -1,4 +1,4 @@
-import img_path from '@/shared/assets/thug.jpg';
+import img_path from '@/shared/assets/secretarev.jpg';
 import { LeaderBoardUserProps } from '../model/interfaces';
 import './styles.scss';
 
