@@ -20,7 +20,7 @@ export const ServiceCard: React.FC<IServiceCardProps> = ({
 		<button className='primary-button' onClick={onClickHandler}>
 			<div className='menu-button-content-container'>
 				<div className='menu-button-content-container-img'>
-					<SVGComponent fillColor={fillColor} />
+					<SVGComponent fillColor={fillColor} width='28px' height='28px'/>
 				</div>
 				<div className='menu-button-content-container-text'>{text}</div>
 			</div>
