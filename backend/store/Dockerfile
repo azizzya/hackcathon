@@ -1,7 +1,10 @@
 FROM eclipse-temurin:17
 
-COPY ca-certificates/russiantrustedca.crt /usr/local/share/ca-certificates/
-RUN update-ca-certificates
+RUN apt update && \
+    apt upgrade && \
+    apt install wget 
+RUN wget https://gu-st.ru/content/Other/doc/russiantrustedca.pem  && \
+    cp russiantrustedca.pem /certificates
 
 COPY target/*.jar app.jar
 

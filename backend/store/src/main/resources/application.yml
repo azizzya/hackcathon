@@ -18,6 +18,5 @@ logging:
             springframework:
                 security: debug
 
-
 gigachat:
     authtoken: ${GIGACHAT_AUTHTOKEN}

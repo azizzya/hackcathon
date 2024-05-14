@@ -51,6 +51,6 @@ public class UserService {
                 return user.get();
             }
         }
-        throw new AuthException("auth failed wrong password or username");
+        throw new AuthException("authentication failed wrong password or username");
     }
 }

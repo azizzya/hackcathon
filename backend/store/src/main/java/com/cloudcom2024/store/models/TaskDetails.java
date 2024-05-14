@@ -18,11 +18,11 @@ import lombok.Data;
 @Entity
 @Table(name = "tasks_details")
 @Data
-public class TaskDetail {
+public class TaskDetails {
     @Id
     @GeneratedValue
-    @Column(name = "task_detail_id")
-    private long taskDetailId;
+    @Column(name = "task_details_id")
+    private long taskDetailsId;
 
     @Column(name = "task_deadline")
     private LocalDateTime taskDeadline;
@@ -38,6 +38,10 @@ public class TaskDetail {
     @JoinColumn(name = "user_id")
     @JsonBackReference
     private User user;
+
+    @ManyToOne
+    @JoinColumn(name = "friend_id")
+    private User fiendName;
 
     @ManyToOne
     @JoinColumn(name = "task_id")

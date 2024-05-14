@@ -42,9 +42,9 @@ public class Task {
 
     @OneToMany(mappedBy = "task", fetch = FetchType.EAGER)
     @JsonBackReference
-    private List<TaskDetail> taskDetails = new ArrayList<>();
+    private List<TaskDetails> taskDetails = new ArrayList<>();
 
-    public void setTaskDetail(TaskDetail taskDetail) {
+    public void setTaskDetail(TaskDetails taskDetail) {
         taskDetails.add(taskDetail);
     }
 }

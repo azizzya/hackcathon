@@ -11,11 +11,12 @@ import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.cloudcom2024.store.dtos.TaskDetailRequest;
-import com.cloudcom2024.store.models.TaskDetail;
+import com.cloudcom2024.store.models.TaskDetails;
 import com.cloudcom2024.store.services.TaskDetailsService;
 import com.cloudcom2024.store.utils.Base64Decoder;
 
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @CrossOrigin(origins = "http://localhost:5173", allowCredentials = "true")
@@ -33,21 +34,32 @@ public class TaskDetailsController {
         this.base64Decoder = base64Decoder;
     }
 
-    @PatchMapping("/{taskDetailID}")
-    public void partiallyUpdateTaskDetailByID(
+    @PatchMapping("/complete")
+    public void setTaskIsDone(
         @RequestHeader(name = HttpHeaders.AUTHORIZATION) String authorization,
-        @PathVariable Long taskDetailID,
         @RequestBody TaskDetailRequest taskDetailRequest
     ) {
-        String username = base64Decoder.basicAuthDecoder(authorization)[0];
-        taskDetailRequest.setUsername(username);
-        taskDetailRequest.setTaskDetailID(taskDetailID);
+        String currentUsername = base64Decoder.basicAuthDecoder(authorization)[0];
+        String friendUsername = taskDetailRequest.getFriendUsername();
+        Long taskID = taskDetailRequest.getTaskID();
 
-        taskDetailsService.updateTaskDetailIsDone(taskDetailRequest);
+        if (taskDetailRequest.getFriendUsername() != null){
+            setTaskIsDoneForCurrentUserAndFriend(currentUsername, friendUsername, taskID);
+        } else {
+            taskDetailsService.setTaskIsDoneByTaskID(taskID);
+        }
     }
 
+    private void setTaskIsDoneForCurrentUserAndFriend(String currentUsername, String friendUsername, Long taskId) {
+        taskDetailsService.setTaskIsDoneForCurrentUserAndFriend(currentUsername,
+            friendUsername,
+            taskId
+        );
+    }
+
+
     @GetMapping
-    public List<TaskDetail> getAllTaskDetailsByUser(
+    public List<TaskDetails> getAllTaskDetailsByUser(
         @RequestHeader(name = HttpHeaders.AUTHORIZATION) String authorization
     ) {
         String username = base64Decoder.basicAuthDecoder(authorization)[0];

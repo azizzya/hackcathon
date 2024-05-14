@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
 import com.cloudcom2024.store.models.Basket;
 import com.cloudcom2024.store.models.Item;
 import com.cloudcom2024.store.models.Task;
-import com.cloudcom2024.store.models.TaskDetail;
+import com.cloudcom2024.store.models.TaskDetails;
 import com.cloudcom2024.store.models.User;
 import com.cloudcom2024.store.repositories.ItemRespository;
 import com.cloudcom2024.store.repositories.TaskDetailsRepository;
@@ -102,7 +102,7 @@ public class DatabaseLoader implements CommandLineRunner{
 
         taskRepository.save(task);
 
-        TaskDetail taskDetail = new TaskDetail();
+        TaskDetails taskDetail = new TaskDetails();
         taskDetail.setTaskDeadline(LocalDateTime.now());
         taskDetail.setTimeCompletion(LocalDateTime.now());
         taskDetail.setDone(false);

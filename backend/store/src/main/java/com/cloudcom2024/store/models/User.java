@@ -62,12 +62,12 @@ public class User {
 
     @OneToMany(mappedBy = "user", fetch = FetchType.EAGER)
     @JsonManagedReference
-    private List<TaskDetail> taskDetails = new ArrayList<>();
+    private List<TaskDetails> taskDetails = new ArrayList<>();
 
     @OneToMany(mappedBy = "user", fetch = FetchType.EAGER)
     private List<Message> messages = new ArrayList<>();
 
-    public void setTaskDetail(TaskDetail taskDetail) {
+    public void setTaskDetail(TaskDetails taskDetail) {
         taskDetails.add(taskDetail);
     }
 
