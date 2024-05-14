@@ -4,7 +4,7 @@ import { BackArrowButton } from '@/features/BackArrowButton';
 import './syles.scss';
 export const LeaderBoardPage: React.FC = () => {
 	return (
-		<div className='leaderboard-page-wrapper'>
+		<div className='page-wrapper'>
 			<header className='leaderboard-header'>
 				<div className='leaderboard-header-arrow'>
 					<BackArrowButton />
@@ -13,7 +13,7 @@ export const LeaderBoardPage: React.FC = () => {
 					<div className='primary-title'>Лидерборд</div>
 				</div>
 			</header>
-			<LeaderBoard />
+			{/* <LeaderBoard /> */}
 		</div>
 	);
 };

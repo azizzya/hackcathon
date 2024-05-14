@@ -30,7 +30,11 @@ export const AuthForm: React.FC = () => {
 	return (
 		<form className='auth-form' onSubmit={onSubmitHandler}>
 			<div className='auth-form-input-container'>
-				<input className='primary-input' placeholder='Логин' {...loginInput} />
+				<input
+					className='primary-input'
+					placeholder='Логин'
+					{...loginInput}
+				/>
 				<input
 					className='primary-input'
 					placeholder='Пароль'

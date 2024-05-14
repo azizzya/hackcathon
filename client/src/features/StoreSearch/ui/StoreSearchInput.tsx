@@ -5,8 +5,8 @@ export const StoreSearchInput: React.FC<
 > = StoreSearchInputProps => {
 	return (
 		<input
-			className='search-input'
-			placeholder='поиск'
+			className='primary-input search-input'
+			placeholder='Поиск'
 			{...StoreSearchInputProps}
 		/>
 	);

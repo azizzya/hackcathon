@@ -20,6 +20,8 @@ $accent-color-orange: #fea82f;
 
 	font-size: 20px;
 
+	transition: border-color 0.2s;
+
 	&:focus {
 		border-color: $primary-color;
 		outline: none;
@@ -56,5 +58,4 @@ $accent-color-orange: #fea82f;
 	font-size: 40px;
 	font-weight: 500;
     margin: 0;
-    color: $text-color;
 }
