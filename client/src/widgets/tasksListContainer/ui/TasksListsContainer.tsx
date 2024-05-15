@@ -27,7 +27,7 @@ export const TasksListsContainer: React.FC = () => {
 				) : tasksQuery.isError ? (
 					<div>error</div>
 				) : tasksQuery.data ? (
-					<TasksList type='active' tasks={tasksQuery.data.completedTasks} />
+					<TasksList type='done' tasks={tasksQuery.data.completedTasks} />
 				) : (
 					<div>1</div>
 				)}

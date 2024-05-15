@@ -4,8 +4,8 @@ import './styles.scss';
 export const BackArrowButton: React.FC = () => {
 	const navigate = useNavigate();
 	return (
-		<div className='backArrow-svg-container' onClick={() => navigate('/menu')}>
-			<BackArrowSVGComponent height='21px' width='24px'/>
+		<div className='backArrow-svg-container' onClick={() => navigate(-1)}>
+			<BackArrowSVGComponent height='21px' width='24px' />
 		</div>
 	);
 };

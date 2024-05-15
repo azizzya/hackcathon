@@ -6,7 +6,7 @@ export function useUpdateTask() {
 	const navigate = useNavigate();
 	return useMutation({
 		mutationFn: (task_id: number) =>
-			taskService.updateTask(task_id, { is_done: true }),
+			taskService.updateTask({ is_done: true, task_id }),
 		mutationKey: ['task', 'update'],
 		retry: 3,
 		onSuccess: () => navigate('/tasks'),

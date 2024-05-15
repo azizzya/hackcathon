@@ -19,12 +19,9 @@ export const NavBar: React.FC = () => {
 
 	return (
 		<nav className='navbar-wrapper'>
-			<button 
-				className='navbar-button' 
-				onClick={() => HandleIconClick('')
-			}>
+			<button className='navbar-button' onClick={() => HandleIconClick('main')}>
 				<MessageSVGComponent
-					fillColor={activeIcon === '' ? '#6C33FF' : 'grey'}
+					fillColor={activeIcon === 'main' ? '#6C33FF' : 'grey'}
 					height='26px'
 					width='26px'
 				/>
@@ -41,10 +38,7 @@ export const NavBar: React.FC = () => {
 				/>
 			</button>
 
-			<button 
-				className='navbar-button' 
-				onClick={() => HandleIconClick('menu')
-			}>
+			<button className='navbar-button' onClick={() => HandleIconClick('menu')}>
 				<MenuSVGComponent
 					fillColor={activeIcon === 'menu' ? '#6C33FF' : 'grey'}
 					height='24px'

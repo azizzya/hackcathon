@@ -14,4 +14,6 @@ export interface ITask {
 }
 
 export interface ITaskDetailsData extends Omit<ITask, 'id'> {}
-export interface ITaskDetailsUpdateData extends Partial<ITaskDetails> {}
+export interface ITaskDetailsUpdateData extends Partial<ITaskDetails> {
+	task_id: number;
+}
