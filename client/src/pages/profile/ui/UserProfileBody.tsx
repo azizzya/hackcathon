@@ -8,20 +8,26 @@ const UserProfileBody: React.FC<IUserProfileBodyProps> = ({
 	qrCodeImg,
 }) => {
 	return (
-		<div className='profile-page-grid'>
-			<div className='profile-page-grid-item-upper'>
-				<img className='profile-page-grid-item-upper-img' src={profileImg} />
-
-				<div className='profile-page-grid-item-upper-text-name'>{`${firstname} ${lastname}`}</div>
-				<div className='profile-page-grid-item-upper-text-login'>
-					{username}
-				</div>
+		<div className='page-wrapper'>
+		  <div className='profile-info'>
+			<div className='profile-info-img'>
+			  <img
+				src={profileImg}
+			  />
 			</div>
-			<div className='profile-page-grid-item-lower'>
-				<img className='profile-page-grid-item-lower-img' src={qrCodeImg} />
+			<div className='profile-info-text-name'>
+			{`${firstname} ${lastname}`}
 			</div>
+			<div className='profile-info-text-login'>
+			  @asecretarev
+			</div>
+			<img
+			  className='profile-qr'
+			  src={qrCodeImg}
+			/>
+		  </div>
 		</div>
-	);
+	  );
 };
 
 export default UserProfileBody;

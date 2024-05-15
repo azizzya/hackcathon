@@ -86,10 +86,21 @@ const data: ILeaderBoardUser[] = [
 		login: '@friendly',
 		surname: 'ХОЙ',
 	},
+	{
+		user_id: 12,
+		name: 'Панки',
+		score: 5554,
+		login: '@friendly',
+		surname: 'ХОЙ',
+	},
+	{
+		user_id: 12,
+		name: 'Панки',
+		score: 5554,
+		login: '@friendly',
+		surname: 'ХОЙ',
+	},
 ];
-33;
-2;
-33;
 
 export const LeaderBoard: React.FC = () => {
 	// const leaderBoardQuery = useLeaderBoard();

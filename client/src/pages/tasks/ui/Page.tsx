@@ -1,4 +1,5 @@
 import '@/shared/ui/shared.scss';
+import '../ui/style.scss'
 import { TasksListsContainer } from '@/widgets/tasksListContainer';
 
 export const TasksPage: React.FC = () => {
