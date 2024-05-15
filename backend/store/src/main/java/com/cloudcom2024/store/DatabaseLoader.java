@@ -99,8 +99,12 @@ public class DatabaseLoader implements CommandLineRunner{
         Task task = new Task();
         task.setTitle("Поешь в столовой");
         task.setCoinReward(new BigDecimal("102.2"));
+        Task groupTask = new Task();
+        task.setTitle("Познакомся c коллегой с ником admin");
+        task.setCoinReward(new BigDecimal("102.2"));
 
         taskRepository.save(task);
+        taskRepository.save(groupTask);
 
         TaskDetails taskDetail = new TaskDetails();
         taskDetail.setTaskDeadline(LocalDateTime.now());
@@ -108,8 +112,16 @@ public class DatabaseLoader implements CommandLineRunner{
         taskDetail.setDone(false);
         taskDetail.setUser(user);
         taskDetail.setTask(task);
+        TaskDetails taskDetailGroup = new TaskDetails();
+        taskDetail.setTaskDeadline(LocalDateTime.now());
+        taskDetail.setTimeCompletion(LocalDateTime.now());
+        taskDetail.setDone(false);
+        taskDetail.setUser(user);
+        taskDetail.setTask(groupTask);
+        taskDetail.setFriend(admin);
 
         taskDetailsRepository.save(taskDetail);
+        taskDetailsRepository.save(taskDetailGroup);
     }
     
 }

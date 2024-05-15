@@ -26,11 +26,9 @@ public class Task {
     @Column(name = "task_id")
     private long taskId;
 
-    @NotNull
     @Column(name = "title")
     private String title;
 
-    @NotNull
     @Column(name = "coin_reward")
     private BigDecimal coinReward;
 

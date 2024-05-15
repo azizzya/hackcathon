@@ -41,7 +41,7 @@ public class TaskDetails {
 
     @ManyToOne
     @JoinColumn(name = "friend_id")
-    private User fiendName;
+    private User friend;
 
     @ManyToOne
     @JoinColumn(name = "task_id")
