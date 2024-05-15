@@ -41,7 +41,7 @@ export const AuthForm: React.FC = () => {
 					{...passwordInput}
 				/>
 			</div>
-			<button className='auth-button'>Авторизоваться</button>
+			<button className='auth-button primary-button'>Авторизоваться</button>
 		</form>
 	);
 };
