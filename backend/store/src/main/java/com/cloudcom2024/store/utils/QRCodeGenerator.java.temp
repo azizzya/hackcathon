@@ -1,5 +1,6 @@
 package com.cloudcom2024.store.utils;
 
+import java.io.IOException;
 import java.nio.file.FileSystems;
 
 import org.bouncycastle.pqc.legacy.math.linearalgebra.Matrix;
@@ -21,9 +22,9 @@ public class QRCodeGenerator {
         this.text = text;
     }
 
-    public void generateImageQRCode() throws WriterException {
+    public void generateImageQRCode() throws WriterException, IOException {
         QRCodeWriter qrCodeWriter = new QRCodeWriter();
         BitMatrix bitMatrix = qrCodeWriter.encode(text, BarcodeFormat.QR_CODE, width, height);
-        //MatrixToImageWriter.writeToPath(bitMatrix, "PNG", FileSystems.getDefault().getPath(text, null));
+        MatrixToImageWriter.writeToPath(bitMatrix, "PNG", FileSystems.getDefault().getPath(path));
     }
 }
