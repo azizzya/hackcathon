@@ -14,7 +14,9 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToMany;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotNull;
 import lombok.Data;
@@ -31,6 +33,10 @@ public class User {
     @NotNull
     @Column(name = "username")
     private String username;
+
+    @OneToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "qr_code_id", referencedColumnName = "qr_code_id")
+    private QRCode qrCode;
     
     @NotNull
     @Column(name = "firstname")

@@ -1,5 +1,6 @@
 package com.cloudcom2024.store.controllers;
 
+import java.io.File;
 import java.util.List;
 
 import org.bouncycastle.util.encoders.Base64Encoder;
@@ -15,6 +16,8 @@ import com.cloudcom2024.store.models.User;
 import com.cloudcom2024.store.services.UserService;
 import com.cloudcom2024.store.utils.Base64Decoder;
 import com.fasterxml.jackson.databind.JsonSerializable.Base;
+
+import jakarta.servlet.ServletContext;
 
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -43,8 +46,11 @@ public class UserController {
     public UserResponse getUserProfile(
         @RequestHeader(name = HttpHeaders.AUTHORIZATION) String authorization
     ) {
+        //String relativePath = "/images";
+        //String workDir = new File("").getAbsolutePath();
+
         String username = base64Decoder.basicAuthDecoder(authorization)[0];
         return userService.getUserByUsername(username).convertToUserResponse();
     }
-    
+
 }

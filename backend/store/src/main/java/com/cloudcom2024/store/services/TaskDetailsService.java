@@ -30,13 +30,13 @@ public class TaskDetailsService {
     }
 
     public void setTaskIsDoneByTaskID(Long taskID) {
-        boolean isTaskDetailExists = taskDetailsRepository.findById(taskID).isPresent();
-        if (!isTaskDetailExists) {
+        Optional<TaskDetails> task = taskDetailsRepository.findById(taskID);
+        if (!task.isPresent()) {
             throw new TaskDetailNotFoundException("task detail not found", taskID);
         }
-
         taskDetailsRepository.setTaskIsDone(taskID);
 
+        //task.get().getUser().getUsername();
         //if (!hasUserAnyActiveTask(taskDetailRequest.getUsername())) {
             //List<Long> allTaskDetailsIDs = taskDetailsRepository.findAll().stream()
                 //.map(x -> x.getTaskDetailsId())

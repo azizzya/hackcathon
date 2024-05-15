@@ -34,4 +34,7 @@ public class UserResponse {
 
     @JsonProperty("phone_number")
     private String phoneNumber;
+
+    @JsonProperty("profile_image")
+    private byte[] profileImage;
 }
