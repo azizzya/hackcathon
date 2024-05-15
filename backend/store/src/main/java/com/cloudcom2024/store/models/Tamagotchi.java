@@ -1,5 +1,7 @@
 package com.cloudcom2024.store.models;
 
+import com.cloudcom2024.store.dtos.TamagotchiResponse;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -11,12 +13,12 @@ import jakarta.validation.constraints.NotNull;
 import lombok.Data;
 
 @Entity
-@Table(name = "tamagotchie")
+@Table(name = "tamagotchi")
 @Data
-public class Tamagotchie {
+public class Tamagotchi {
     @Id
     @GeneratedValue
-    @Column(name = "tamagothie_id")
+    @Column(name = "tamagothi_id")
     private long tamagothieId;
 
     @NotNull
@@ -27,4 +29,12 @@ public class Tamagotchie {
     @OneToOne
     @JoinColumn(name = "user_id")
     private User user;
+
+    public TamagotchiResponse convertToTamagotchiResponse() {
+        TamagotchiResponse tamagotchiResponse = new TamagotchiResponse();
+        tamagotchiResponse.setHappiness(happiness);
+        tamagotchiResponse.setTamagitchiID(tamagothieId);
+
+        return tamagotchiResponse;
+    }
 }

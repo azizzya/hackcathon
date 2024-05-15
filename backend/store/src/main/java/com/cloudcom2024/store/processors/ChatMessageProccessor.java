@@ -103,9 +103,13 @@ public class ChatMessageProccessor {
         
         int lastIndex = messageResponse.getChoices().size() - 1;
 
-        //return messageResponse.getChoices().get(lastIndex)
-            //.getMessage()
-            //.getContent();
-        return null;
+        Message messageFROMDAOResponse = messageResponse.getChoices().get(lastIndex)
+            .getMessage().convertToMessage(user);
+        messageRepository.save(messageFROMDAOResponse);
+
+        return messageResponse.getChoices().get(lastIndex)
+            .getMessage()
+            .getContent();
+        
     }
 }

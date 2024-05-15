@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 import com.cloudcom2024.store.dtos.ErrorDetails;
+import com.cloudcom2024.store.exceptions.NoGroupTaskAvailableException;
 import com.cloudcom2024.store.exceptions.TaskDetailNotFoundException;
 
 import jakarta.security.auth.message.AuthException;
@@ -21,6 +22,15 @@ public class ExeptionControllerAdvice {
             .badRequest()
             .body(errorDetails);
     }
+
+    //@ExceptionHandler(NoGroupTaskAvailableException.class)
+    //public ResponseEntity<ErrorDetails> exceptionNoGroupTaskAvailableExceptionHandler(NoGroupTaskAvailableException ex) {
+        //ErrorDetails errorDetails = new ErrorDetails();
+        //errorDetails.setMessage(ex.getMessage());
+        //return ResponseEntity
+            //.badRequest()
+            //.body(errorDetails);
+    //}
    
     @ExceptionHandler(AuthException.class)
     public ResponseEntity<ErrorDetails> extentionAuthHandler(AuthException ex) {

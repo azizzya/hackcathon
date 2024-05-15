@@ -23,7 +23,7 @@ public class Message {
     @Column(name = "role")
     private String role;
     
-    @Column(name = "message")
+    @Column(name = "message", columnDefinition = "TEXT")
     private String message;
 
     @ManyToOne

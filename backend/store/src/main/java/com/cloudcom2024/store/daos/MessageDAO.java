@@ -1,6 +1,7 @@
 package com.cloudcom2024.store.daos;
 
 import com.cloudcom2024.store.models.Message;
+import com.cloudcom2024.store.models.User;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import lombok.Data;
@@ -17,6 +18,15 @@ public class MessageDAO {
         Message message = new Message();
         message.setRole(role);
         message.setMessage(content);
+
+        return message;
+    }
+
+    public Message convertToMessage(User user) {
+        Message message = new Message();
+        message.setMessage(content);
+        message.setRole(role);
+        message.setUser(user);
 
         return message;
     }
