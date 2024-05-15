@@ -1,3 +1,5 @@
+import './styles.scss'
+
 import { TasksList } from '@/features/TasksList';
 import { tasksData } from './data';
 import './styles.scss';
@@ -10,9 +12,9 @@ export const TasksListsContainer: React.FC = () => {
 	const doneTasks = data.filter(task => task.is_done == true);
 
 	return (
-		<div className='tasks-lists-container'>
-			<div>
-				<div className='tasks-list-title'>Активные</div>
+		<div className='tasks'>
+			<div className='tasks-block'>
+				<h2>Активные</h2>
 				<TasksList type='active' tasks={currentTasks} />
 				{/* поменять, когда бек будет готов */}
 				{/* {tasksQuery.isLoading ? (
@@ -29,8 +31,8 @@ export const TasksListsContainer: React.FC = () => {
 					<div>1</div>
 				)} */}
 			</div>
-			<div>
-				<div className='tasks-list-title'>Выполненные</div>
+			<div className='tasks-block'>
+				<h2>Выполненные</h2>
 				<TasksList type='done' tasks={doneTasks} />
 				{/* поменять, когда бек будет готов */}
 				{/* {tasksQuery.isLoading ? (

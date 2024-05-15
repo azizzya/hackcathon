@@ -1,18 +1,27 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;700&display=swap');
+@import "../../shared/ui/shared.scss";
+
+.html, body {
+	margin: 0px;
+	padding: 0px;
+}
 
 body {
 	font-family: 'Roboto Mono', monospace;
-	font-size: 60px;
-	margin: 0px;
-	padding: 0px;
+	color: $text-color;
 }
+
 input,
 button {
 	font-family: 'Roboto Mono', monospace;
-	font-size: 60px;
 }
 
-html {
-	margin: 0px;
-	padding: 0px;
+
+$width:768px;
+
+@mixin mobile {
+    @media(max-width: #{$width}){
+        @content
+    }
 }
+

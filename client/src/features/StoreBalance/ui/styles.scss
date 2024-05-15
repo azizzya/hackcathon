@@ -1,17 +1,16 @@
 @import '../../../shared/ui/shared.scss';
 
 .storeBalance-wrapper {
-	box-sizing: border-box;
-	background-color: $primary-color;
-	color: $background-color;
-	border-radius: 20px;
-
-	width: 100%;
-	height: 100%;
-
 	display: flex;
-	flex-direction: column;
-	justify-content: center;
-
 	align-items: center;
+    justify-content: center;
+
+	min-width: 30px;
+	height: 36px;
+    padding: 0 6px 0 8px;
+
+	border-radius: 6px;
+
+	background-color: $primary-color;
+	color: white;
 }

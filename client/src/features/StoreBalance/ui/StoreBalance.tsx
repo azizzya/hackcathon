@@ -1,4 +1,5 @@
 import './styles.scss';
-export const StoreBalance: React.FC = () => {
-	return <div className='storeBalance-wrapper'>2190¢</div>;
+import {StoreBalanceProps} from '../model/interfaces'
+export const StoreBalance: React.FC<StoreBalanceProps> = ({balance}) => {
+	return <div className='storeBalance-wrapper'>{`${balance}¢`}</div>; //заготовка
 };

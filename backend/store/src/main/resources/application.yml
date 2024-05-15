@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 spring:
     application:
         name: store
@@ -19,4 +20,28 @@ logging:
                 security: debug
 
 gigachat:
+=======
+spring:
+    application:
+        name: store
+    datasource:
+        url: jdbc:postgresql://localhost:5432/store
+        username: root
+        password: root
+    jpa:
+        hibernate:
+            ddl-auto: create
+        properties:
+            hibernate:
+                dialect: org.hibernate.dialect.PostgreSQLDialect
+
+logging:
+    level:
+        org:
+            springframework:
+                security: debug
+
+
+gigachat:
+>>>>>>> styles
     authtoken: ${GIGACHAT_AUTHTOKEN}

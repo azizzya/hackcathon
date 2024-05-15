@@ -18,41 +18,50 @@ export const NavBar: React.FC = () => {
 	};
 
 	return (
-		<div className='navbar-wrapper'>
-			<button className='navbar-button' onClick={() => HandleIconClick('')}>
+		<nav className='navbar-wrapper'>
+			<button 
+				className='navbar-button' 
+				onClick={() => HandleIconClick('')
+			}>
 				<MessageSVGComponent
 					fillColor={activeIcon === '' ? '#6C33FF' : 'grey'}
-					height='50%'
-					width='50%'
+					height='26px'
+					width='26px'
 				/>
 			</button>
+
 			<button
 				className='navbar-button'
 				onClick={() => HandleIconClick('tasks')}
 			>
 				<TaskSVGComponent
 					fillColor={activeIcon === 'tasks' ? '#6C33FF' : 'grey'}
-					height='50%'
-					width='50%'
+					height='26px'
+					width='26px'
 				/>
 			</button>
-			<button className='navbar-button' onClick={() => HandleIconClick('menu')}>
+
+			<button 
+				className='navbar-button' 
+				onClick={() => HandleIconClick('menu')
+			}>
 				<MenuSVGComponent
 					fillColor={activeIcon === 'menu' ? '#6C33FF' : 'grey'}
-					height='40%'
-					width='40%'
+					height='24px'
+					width='26px'
 				/>
 			</button>
+
 			<button
 				className='navbar-button'
 				onClick={() => HandleIconClick('profile')}
 			>
 				<ProfileSVGComponent
 					fillColor={activeIcon === 'profile' ? '#6C33FF' : 'grey'}
-					height='50%'
-					width='50%'
+					height='28px'
+					width='28px'
 				/>
 			</button>
-		</div>
+		</nav>
 	);
 };

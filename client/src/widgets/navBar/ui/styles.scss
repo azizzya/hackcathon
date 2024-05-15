@@ -6,7 +6,7 @@
 	left: 0;
 
 	width: 100%;
-	height: 7vh;
+	height: 48px;
 
 	background-color: $background-color;
 
@@ -21,19 +21,12 @@
 	width: 100%;
 	height: 100%;
 
-	font-size: 30px;
+    padding: 0;
+    margin: 0;
 
 	color: $background-color;
 	background-color: $background-color;
-
 	border: none;
 
-	&:active {
-		fill: #8454fd;
-	}
-}
-
-.navbar-button-img {
-	width: 50%;
-	height: 50%;
+	cursor: pointer;
 }

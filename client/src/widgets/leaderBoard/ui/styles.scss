@@ -1,78 +1,63 @@
 @import '../../../shared/ui/shared.scss';
+
 .leaderBoard-wrapper {
+    margin-top: 24px;
+
 	width: 100%;
 
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 
-	gap: 2vh;
+	gap: 18px;
 }
 
 .leaderBoard-user-wrapper {
-	display: flex;
-	flex-direction: row;
-
 	width: 100%;
 
-	font-weight: 450;
-	font-size: 45px;
-}
-
-.leaderBoard-user-item-pos {
-	white-space: nowrap;
-	text-align: center;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-
-	width: 15%;
-}
-
-.leaderBoard-user-item-img-container {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-
-	align-items: center;
-
-	border-radius: 50%;
-
-	min-height: 50px;
-	min-width: 50px;
-
-	width: 15%;
-}
-.leaderBoard-user-item-text-container {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-
-	padding-left: 40px;
-
-	width: 50%;
-}
-
-.leaderBoard-user-item-score {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	text-align: end;
-
-	width: 20%;
-}
-
-.leaderBoard-user-item-name {
 	display: flex;
 	flex-direction: row;
-	justify-content: start;
+    align-items: center;
+    justify-content: space-between;
+
+	font-size: 16px;
 }
 
-.leaderBoard-user-item-login {
-	font-weight: 100;
+.leaderBoard-user-item {
+    &:first-child {
+        display: flex;
+        align-items: center;
+    }
+
+    &-pos {
+        width: 40px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &-text {
+        margin-left: 8px;
+
+        &-login {
+            font-size: 11px;
+        }
+    }
 }
 
-.leaderBoard-user-img {
-	height: 100%;
-	border-radius: 50%;
+.leaderBoard-user-item-img {
+    margin-left: 12px;
+
+    $img-size: 36px;
+    width: $img-size;
+    height: $img-size;
+    border: 0;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+
+    overflow: hidden;
+
+    &-img img {
+        height: $img-size;
+    }
 }

@@ -1,41 +1,10 @@
-.leaderboard-page-wrapper {
-	margin-inline: 4%;
-}
-
 .leaderboard-header {
-	margin-top: 10%;
-	margin-bottom: 5%;
-
-	display: flex;
-	flex-direction: row;
-	justify-content: flex-start;
-}
-
-.leaderboard-header-arrow {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-
-	align-items: start;
-
-	box-sizing: border-box;
-
-	width: 20%;
-
-	padding-top: 5%;
-	padding-bottom: 5%;
-	padding-right: 10%;
-}
-
-.leaderboard-header-title {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-
-	align-items: start;
-	text-align: start;
-
-	box-sizing: border-box;
-
-	width: 80%;
+	margin-top: 60px;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    &-arrow {
+        position: relative;
+        top: 4px;
+    }
 }

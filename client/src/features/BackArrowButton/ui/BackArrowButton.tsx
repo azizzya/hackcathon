@@ -5,7 +5,7 @@ export const BackArrowButton: React.FC = () => {
 	const navigate = useNavigate();
 	return (
 		<div className='backArrow-svg-container' onClick={() => navigate('/menu')}>
-			<BackArrowSVGComponent />
+			<BackArrowSVGComponent height='21px' width='24px'/>
 		</div>
 	);
 };
