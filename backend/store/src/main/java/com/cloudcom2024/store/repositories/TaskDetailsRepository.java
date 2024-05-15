@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 package com.cloudcom2024.store.repositories;
 
 import java.time.LocalDateTime;
@@ -36,18 +35,4 @@ public interface TaskDetailsRepository extends CrudRepository<TaskDetails, Long>
         Long currentUsernameID,
         Long taskDetailsID
     );  
-=======
-package com.cloudcom2024.store.repositories;
-
-import java.util.List;
-
-import org.springframework.data.repository.CrudRepository;
-import org.springframework.stereotype.Repository;
-
-import com.cloudcom2024.store.models.TaskDetail;
-
-@Repository
-public interface TaskDetailsRepository extends CrudRepository<TaskDetail, Long> {
-    List<TaskDetail> findAll();
->>>>>>> styles
 } 
