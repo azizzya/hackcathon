@@ -3,10 +3,10 @@ import instance from './axios.api';
 
 class UserService {
 	async getProfile() {
-		return instance.get<IUserProfile>('/user/profile');
+		return instance.get<IUserProfile>('/users/profile');
 	}
 	async getLeaders() {
-		return instance.get<ILeader[]>('/user/leaders');
+		return instance.get<ILeader[]>('/users/leadersboard');
 	}
 }
 

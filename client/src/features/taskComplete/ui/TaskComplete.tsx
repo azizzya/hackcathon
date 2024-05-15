@@ -7,11 +7,12 @@ import { useQueryParams } from '../helpers/useQueryParams';
 
 export const TaskComplete: React.FC = () => {
 	const task_id = useQueryParams();
+	console.log(task_id);
 	const updateMutation = useUpdateTask();
 
 	useEffect(() => {
 		updateMutation.mutate(+task_id);
-	}, []);
+	}, [task_id]);
 
 	return updateMutation.isPending ? (
 		<img src={loadPath} alt='GIF' />

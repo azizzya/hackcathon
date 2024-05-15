@@ -7,8 +7,8 @@ export function useTasks() {
 		queryFn: () => taskService.getAll(),
 		select: ({ data }) => {
 			return {
-				currentTasks: data.filter(task => !task.is_done),
-				completedTasks: data.filter(task => task.is_done),
+				currentTasks: data.filter(task => task.is_done === false),
+				completedTasks: data.filter(task => task.is_done === true),
 			};
 		},
 	});
