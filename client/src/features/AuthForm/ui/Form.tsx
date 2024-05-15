@@ -16,15 +16,13 @@ export const AuthForm: React.FC = () => {
 	const onSubmitHandler = (e: React.ChangeEvent<HTMLFormElement>) => {
 		e.preventDefault();
 		loginMutation.mutate({
-			login: loginInput.value,
+			username: loginInput.value,
 			password: passwordInput.value,
 		});
 		if (loginMutation.isSuccess) {
 			setUserDataToLocalStorage(passwordInput.value, loginInput.value);
 			navigate('/');
 		}
-		setUserDataToLocalStorage(passwordInput.value, loginInput.value);
-		navigate('/'); //убрать
 	};
 
 	return (

@@ -1,16 +1,11 @@
 import { authService } from '@/shared/api/auth.service';
 import { IUserLogIn } from '@/shared/interfaces/user.interfaces';
 import { useMutation } from '@tanstack/react-query';
-import { useNavigate } from 'react-router-dom';
 
 export function useLogInMutation() {
-	const navigate = useNavigate();
 	return useMutation({
 		mutationFn: (user: IUserLogIn) => authService.auth(user),
 		mutationKey: ['auth'],
-		onSuccess: () => {
-			navigate('/');
-		},
-		onError: () => alert('error'), //делать
+		onSuccess: () => {},
 	});
 }

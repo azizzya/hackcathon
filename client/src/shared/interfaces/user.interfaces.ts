@@ -34,7 +34,7 @@ export interface ILeader {
 }
 
 export interface IUserLogIn {
-	login: string;
+	username: string;
 	password: string;
 }
 
