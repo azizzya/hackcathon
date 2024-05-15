@@ -33,10 +33,6 @@ public class User {
     @Column(name = "username")
     private String username;
 
-    @OneToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "qr_code_id", referencedColumnName = "qr_code_id")
-    private QRCode qrCode;
-    
     @NotNull
     @Column(name = "firstname")
     private String firstname;

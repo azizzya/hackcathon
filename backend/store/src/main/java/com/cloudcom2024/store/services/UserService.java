@@ -11,6 +11,7 @@ import com.cloudcom2024.store.dtos.RegistrationFormRequest;
 import com.cloudcom2024.store.dtos.UserResponse;
 import com.cloudcom2024.store.models.User;
 import com.cloudcom2024.store.repositories.UserRepository;
+import com.cloudcom2024.store.utils.QRCodeGenerator;
 
 import jakarta.security.auth.message.AuthException;
 
@@ -37,9 +38,18 @@ public class UserService {
             .collect(Collectors.toList());
     }
 
-    public User getUserByUsername(String username) {
-        Optional<User> user = userRepository.findUserByUsername(username);
-        return user.get();
+    public UserResponse getUserByUsername(String username) {
+        String URL = String.format("%s:%d/tasks/complete?task_id=%d&friend_username=%d",
+            "localhost", 5173, 1, 1);
+        byte[] qrCode = null;
+        try {
+            QRCodeGenerator qrCodeGenerator = new QRCodeGenerator(URL, 500, 500);
+            qrCode = qrCodeGenerator.generateByteQRCode();
+        } catch (Exception ex) {}
+        UserResponse user = userRepository.findUserByUsername(username).get()
+            .convertToUserResponse();
+        user.setQrCode(qrCode);
+        return user;
     }
 
     public User authUser(RegistrationFormRequest registrationFormRequest) throws AuthException {
