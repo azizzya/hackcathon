@@ -9,10 +9,12 @@ import org.springframework.stereotype.Component;
 
 import com.cloudcom2024.store.models.Basket;
 import com.cloudcom2024.store.models.Item;
+import com.cloudcom2024.store.models.Tamagotchi;
 import com.cloudcom2024.store.models.Task;
 import com.cloudcom2024.store.models.TaskDetails;
 import com.cloudcom2024.store.models.User;
 import com.cloudcom2024.store.repositories.ItemRespository;
+import com.cloudcom2024.store.repositories.TamagotchiRepository;
 import com.cloudcom2024.store.repositories.TaskDetailsRepository;
 import com.cloudcom2024.store.repositories.TaskRepository;
 import com.cloudcom2024.store.repositories.UserRepository;
@@ -28,6 +30,7 @@ public class DatabaseLoader implements CommandLineRunner{
     final private TaskRepository taskRepository;
     final private TaskDetailsRepository taskDetailsRepository;
     final private UserRepository userRepository;
+    final private TamagotchiRepository tamagotchiRepository;
     final private PasswordEncoder passwordEncoder;
     //final private EasyRandom easyRandom;
 
@@ -36,6 +39,7 @@ public class DatabaseLoader implements CommandLineRunner{
         TaskRepository taskRepository,
         TaskDetailsRepository taskDetailsRepository,
         UserRepository userRepository,
+        TamagotchiRepository tamagotchiRepository,
         PasswordEncoder passwordEncoder
      //   EasyRandom easyRandom
     ) {
@@ -43,6 +47,7 @@ public class DatabaseLoader implements CommandLineRunner{
         this.taskRepository = taskRepository;
         this.taskDetailsRepository = taskDetailsRepository;
         this.userRepository = userRepository;
+        this.tamagotchiRepository = tamagotchiRepository;
         this.passwordEncoder = passwordEncoder;
       //  this.easyRandom = easyRandom;
     }
@@ -122,6 +127,12 @@ public class DatabaseLoader implements CommandLineRunner{
 
         taskDetailsRepository.save(taskDetail);
         taskDetailsRepository.save(taskDetailGroup);
+
+        Tamagotchi tamagotchi = new Tamagotchi();
+        tamagotchi.setHappiness(50);
+        tamagotchi.setUser(user);
+       
+        tamagotchiRepository.save(tamagotchi);
     }
     
 }

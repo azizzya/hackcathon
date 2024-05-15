@@ -10,7 +10,7 @@ import com.cloudcom2024.store.models.Tamagotchi;
 @Repository
 public interface TamagotchiRepository extends CrudRepository<Tamagotchi, Long> {
     @Query(
-        value = "SELECT * FROM tamagitchi WHERE user_id = ?1",
+        value = "SELECT * FROM tamagotchi WHERE user_id = ?1",
         nativeQuery = true
     )
     Tamagotchi findTamagotchiByUserID(Long userID);

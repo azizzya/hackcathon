@@ -28,6 +28,7 @@ public class BasicSecurityConfig {
                         .requestMatchers("/tasks/**", "/tasks/details/**").hasAnyRole("ADMIN", "USER")
                         .requestMatchers("/messages/**").hasAnyRole("ADMIN", "USER")
                         .requestMatchers("/users/**").hasAnyRole("ADMIN", "USER")
+                        .requestMatchers("/tamagothi").hasAnyRole("ADMIN", "USER")
                         .requestMatchers(
                             "/swagger-ui/**",
                             "v3/api-docs/**"
