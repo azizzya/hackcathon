@@ -1,78 +1,63 @@
-// @import '../../../shared/ui/shared.scss';
-// .leaderBoard-wrapper {
-// 	width: 100%;
+@import '../../../shared/ui/shared.scss';
 
-// 	display: flex;
-// 	flex-direction: column;
-// 	justify-content: center;
+.leaderBoard-wrapper {
+    margin-top: 24px;
 
-// 	gap: 2vh;
-// }
+	width: 100%;
 
-// .leaderBoard-user-wrapper {
-// 	display: flex;
-// 	flex-direction: row;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
 
-// 	width: 100%;
+	gap: 18px;
+}
 
-// 	font-weight: 450;
-// 	font-size: 45px;
-// }
+.leaderBoard-user-wrapper {
+	width: 100%;
 
-// .leaderBoard-user-item-pos {
-// 	white-space: nowrap;
-// 	text-align: center;
-// 	display: flex;
-// 	flex-direction: column;
-// 	justify-content: center;
+	display: flex;
+	flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
 
-// 	width: 15%;
-// }
+	font-size: 16px;
+}
 
-// .leaderBoard-user-item-img-container {
-// 	display: flex;
-// 	flex-direction: column;
-// 	justify-content: center;
+.leaderBoard-user-item {
+    &:first-child {
+        display: flex;
+        align-items: center;
+    }
 
-// 	align-items: center;
+    &-pos {
+        width: 40px;
+        display: flex;
+        justify-content: space-between;
+    }
 
-// 	border-radius: 50%;
+    &-text {
+        margin-left: 8px;
 
-// 	min-height: 50px;
-// 	min-width: 50px;
+        &-login {
+            font-size: 11px;
+        }
+    }
+}
 
-// 	width: 15%;
-// }
-// .leaderBoard-user-item-text-container {
-// 	display: flex;
-// 	flex-direction: column;
-// 	justify-content: center;
+.leaderBoard-user-item-img {
+    margin-left: 12px;
 
-// 	padding-left: 40px;
+    $img-size: 36px;
+    width: $img-size;
+    height: $img-size;
+    border: 0;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
 
-// 	width: 50%;
-// }
+    overflow: hidden;
 
-// .leaderBoard-user-item-score {
-// 	display: flex;
-// 	flex-direction: column;
-// 	justify-content: center;
-// 	text-align: end;
-
-// 	width: 20%;
-// }
-
-// .leaderBoard-user-item-name {
-// 	display: flex;
-// 	flex-direction: row;
-// 	justify-content: start;
-// }
-
-// .leaderBoard-user-item-login {
-// 	font-weight: 100;
-// }
-
-// .leaderBoard-user-img {
-// 	height: 100%;
-// 	border-radius: 50%;
-// }
+    &-img img {
+        height: $img-size;
+    }
+}

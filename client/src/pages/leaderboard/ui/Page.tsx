@@ -10,10 +10,10 @@ export const LeaderBoardPage: React.FC = () => {
 					<BackArrowButton />
 				</div>
 				<div className='leaderboard-header-title'>
-					<div className='primary-title'>Лидерборд</div>
+					<h1 className='primary-title'>Лидерборд</h1>
 				</div>
 			</header>
-			{/* <LeaderBoard /> */}
+			<LeaderBoard />
 		</div>
 	);
 };

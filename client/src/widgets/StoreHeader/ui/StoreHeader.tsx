@@ -13,7 +13,7 @@ export const StoreHeader: React.FC = () => {
 			</div>
 			<div className='store-header-item'>
 				<div className='store-header-item-balance'>
-					<StoreBalance />
+					<StoreBalance balance={2190}/>
 				</div>
 				<div className='store-header-item-cart'>
 					<ShoppingCartSVGComponent width='26px' height='24px' />
